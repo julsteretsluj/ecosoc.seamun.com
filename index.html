@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEAMUN | ECOSOC Committee</title>
+    <meta
+      name="description"
+      content="SEAMUN I 2027 ECOSOC committee portal with topics, key terms, chair applications, and resources."
+    />
+    <style>
+      :root {
+        --bg: #f8fbfd;
+        --panel: #ffffff;
+        --text: #1a3550;
+        --muted: #5c738a;
+        --accent: #1f7ea8;
+        --line: #d5e4ef;
+        --soft-shadow: 0 10px 30px rgba(25, 73, 108, 0.08);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at 15% -20%, rgba(31, 126, 168, 0.12), transparent 35%),
+          radial-gradient(circle at 90% 0%, rgba(51, 161, 203, 0.1), transparent 26%),
+          var(--bg);
+        color: var(--text);
+      }
+      .container { width: min(1120px, 92vw); margin: 0 auto; }
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(248, 251, 253, 0.92);
+        border-bottom: 1px solid var(--line);
+      }
+      .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; gap: 1rem; }
+      .brand { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 700; letter-spacing: 0.04em; color: var(--text); text-decoration: none; }
+      .brand-logo { width: 72px; height: 40px; object-fit: contain; }
+      .brand span { color: var(--accent); }
+      .links { display: flex; gap: 1rem; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; }
+      .links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; }
+      .links a:hover { color: var(--accent); }
+      .hero { padding: 5.2rem 0 2.5rem; border-bottom: 1px solid var(--line); }
+      .hero-inner { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 1.2rem; align-items: center; }
+      .kicker { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem; color: var(--accent); margin: 0 0 0.8rem; font-weight: 600; }
+      h1 { margin: 0; font-size: clamp(2.1rem, 5.8vw, 3.5rem); line-height: 1.08; font-family: Georgia, "Times New Roman", serif; font-weight: 600; }
+      h2 { margin: 0 0 0.8rem; font-size: 1.5rem; color: #1a3550; font-family: Georgia, "Times New Roman", serif; font-weight: 600; }
+      .lead, .muted { color: var(--muted); line-height: 1.7; }
+      .meta { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.3rem; }
+      .pill { border: 1px solid var(--line); background: #f0f7fc; color: #275470; padding: 0.45rem 0.8rem; border-radius: 999px; font-size: 0.85rem; }
+      .hero-logo-panel { justify-self: end; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--soft-shadow); padding: 0.8rem; max-width: 320px; }
+      .hero-logo-panel img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      section { padding: 2.5rem 0; border-bottom: 1px solid var(--line); }
+      .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 1rem; }
+      .split { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1rem; align-items: start; }
+      .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1.15rem; box-shadow: var(--soft-shadow); }
+      .card h3 { margin-top: 0; }
+      .resource-controls { margin-top: 0.8rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+      input[type="search"], select { background: #fff; border: 1px solid var(--line); color: #1a3550; border-radius: 8px; padding: 0.5rem 0.65rem; }
+      ul { margin: 0.4rem 0 0; padding-left: 1.1rem; color: #2e506a; }
+      li { margin-bottom: 0.4rem; line-height: 1.55; }
+      .term-links a { color: var(--accent); text-decoration: none; }
+      .term-links a:hover { text-decoration: underline; }
+      .btn { display: inline-block; margin-top: 0.7rem; color: #fff; background: var(--accent); border: 1px solid #1b7196; border-radius: 8px; padding: 0.55rem 0.85rem; text-decoration: none; font-weight: 600; }
+      .btn:hover { filter: brightness(0.95); }
+      .footer { padding: 1.5rem 0 2.5rem; color: #5c738a; font-size: 0.9rem; }
+      @media (max-width: 820px) {
+        .split, .hero-inner { grid-template-columns: 1fr; }
+        .hero-logo-panel { justify-self: start; max-width: 260px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="brand" href="#top">
+          <img class="brand-logo" src="./ECOSOC.png" alt="ECOSOC logo" />
+          SEAMUN <span>ECOSOC</span>
+        </a>
+        <ul class="links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#conference">Conference</a></li>
+          <li><a href="#topics">Topics</a></li>
+          <li><a href="#terms">Key Terms</a></li>
+          <li><a href="#chairs">Chair Apps</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div>
+            <p class="kicker" id="conference-kicker">SEAMUN Committee Portal</p>
+            <h1 id="committee-title">Economic and Social Council (ECOSOC)</h1>
+            <p class="lead" id="committee-subtitle"></p>
+            <div class="meta">
+              <span class="pill" id="conference-location"></span>
+              <span class="pill" id="conference-dates"></span>
+            </div>
+          </div>
+          <div class="hero-logo-panel">
+            <img src="./ECOSOC.png" alt="ECOSOC committee logo card" />
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container split">
+          <div class="card">
+            <h2>About This Committee</h2>
+            <p class="muted" id="about-mission"></p>
+            <p class="muted" id="about-focus"></p>
+          </div>
+          <div class="card">
+            <h2>Delegate Readiness Checklist</h2>
+            <ul id="delegate-help-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="conference">
+        <div class="container split">
+          <div class="card">
+            <h2>SEAMUN I 2027 Conference Details</h2>
+            <p class="muted" id="conference-slogan"></p>
+            <ul id="conference-meta-list"></ul>
+          </div>
+          <div class="card">
+            <h2>Fees and Session Structure</h2>
+            <h3>Registration Fees</h3>
+            <ul id="conference-fees-list"></ul>
+            <h3>Committee Session Plan</h3>
+            <ul id="conference-sessions-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="topics">
+        <div class="container">
+          <h2>Agenda Topics</h2>
+          <p class="muted">This static website includes the full ECOSOC content and does not require a backend server.</p>
+          <div id="topics-grid" class="grid"></div>
+          <div class="grid">
+            <article class="card">
+              <h3>Allocation Examples</h3>
+              <p id="allocation-notes" class="muted"></p>
+              <h3>ECOSOC Matrix Snapshot</h3>
+              <ul id="allocation-matrix-list"></ul>
+              <h3>Sample Country Allocation Sets</h3>
+              <ul id="allocation-examples-list"></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="terms">
+        <div class="container">
+          <h2>Key Terms</h2>
+          <p class="muted">20 key terms are listed for each topic with learning links.</p>
+          <div id="terms-grid"></div>
+        </div>
+      </section>
+
+      <section id="chairs">
+        <div class="container split">
+          <div class="card">
+            <h2>Chair Applications</h2>
+            <p class="muted" id="chairs-overview"></p>
+            <h3>Eligibility</h3>
+            <ul id="chairs-eligibility"></ul>
+            <h3>Application Process</h3>
+            <ul id="chairs-process"></ul>
+            <a id="chairs-apply-link" class="btn" href="#">Apply for ECOSOC Chair</a>
+          </div>
+          <div class="card">
+            <h2>Timeline</h2>
+            <ul id="chairs-timeline"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="resources">
+        <div class="container">
+          <h2>Research Resources</h2>
+          <p class="muted">Filter references by type and search by keyword.</p>
+          <div class="resource-controls">
+            <input id="resource-search" type="search" placeholder="Search resources..." />
+            <select id="resource-filter">
+              <option value="all">All Types</option>
+              <option value="UN">UN</option>
+              <option value="Data">Data</option>
+              <option value="Policy">Policy</option>
+            </select>
+          </div>
+          <div id="resources-grid" class="grid"></div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="container">
+          <h2>FAQ</h2>
+          <div id="faq-grid" class="grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">ECOSOC portal maintained by SEAMUN Secretariat.</div>
+    </footer>
+
+    <script>
+      const data = {
+        conference: {
+          name: "SEAMUN I 2027",
+          committee: "Economic and Social Council (ECOSOC)",
+          subtitle: "Committee portal for topic preparation, chair applications, and conference readiness.",
+          location: "Bangkok",
+          dates: "January 23-24, 2027"
+        },
+        conferenceInfo: {
+          slogan: "Policies with a Purpose",
+          format: "2-day conference",
+          delegateCapacity: "200 delegates",
+          committeeCount: "10 committees total",
+          fees: [
+            "Delegate fee (2-day): 1,800 THB",
+            "Delegate fee (1-day): 1,200 THB",
+            "Chair staff package fee: 800 THB",
+            "One-day chair fee listed in planning notes: 500 THB"
+          ],
+          sessionPlan: [
+            "Day 1: three committee sessions, total 4.5 hours",
+            "Day 2: three committee sessions, total 4.5 hours",
+            "Total committee debate time across conference: 9 hours"
+          ]
+        },
+        about: {
+          mission: "ECOSOC coordinates the UN's economic, social, and development work, connecting policy to implementation through specialized agencies and regional commissions.",
+          focus: "At conference, delegates balance macro-level policy tradeoffs with practical outcomes, emphasizing equitable growth, resilience, and measurable impact."
+        },
+        topics: [
+          {
+            id: "t1",
+            title: "The Question of Implementing a Globally Coordinated Universal Basic Income (UBI) Programme as a Strategy for Poverty Eradication and Economic Stability",
+            summary: "Debate whether a globally coordinated UBI framework can reduce extreme poverty while preserving fiscal sustainability, labor incentives, and macroeconomic stability across diverse national contexts.",
+            guidingQuestions: [
+              "Should ECOSOC recommend universal design principles for UBI or region-specific implementation models?",
+              "What financing mechanisms can support UBI pilots without destabilizing national budgets?",
+              "How should states measure poverty-reduction outcomes and labor market effects?"
+            ],
+            prepIdeas: [
+              "Compare at least two national cash-transfer or income-support models.",
+              "Prepare evidence on fiscal trade-offs, inflation concerns, and social protection outcomes.",
+              "Draft implementation clauses with timelines, safeguards, and monitoring indicators."
+            ]
+          },
+          {
+            id: "t2",
+            title: "The Question of Exploring International Mechanisms for Reallocating Military Expenditures Towards the Development and Strengthening of Global Public Health Systems",
+            summary: "Examine policy pathways for redirecting a portion of military expenditure toward resilient and equitable public health systems, especially in low- and middle-income settings.",
+            guidingQuestions: [
+              "What international accountability mechanisms could govern reallocation commitments?",
+              "How can states balance sovereignty and security concerns with global health obligations?",
+              "Which public-health investments should be prioritized for measurable long-term impact?"
+            ],
+            prepIdeas: [
+              "Collect military spending and public-health spending trend data for your assigned country.",
+              "Map feasible national pathways for partial budget reallocation or dual-use investments.",
+              "Write clauses that include funding transparency, implementation oversight, and reporting benchmarks."
+            ]
+          }
+        ],
+        allocationExamples: {
+          notes: "Examples below are for ECOSOC preparation and are illustrative only. Final country allocations are released by Delegate Affairs.",
+          matrixSummary: [
+            "ECOSOC allocation target: 22 delegates",
+            "ECOSOC dais target: 2 chairs",
+            "ECOSOC total room size: 24 participants"
+          ],
+          sampleCountryAllocations: [
+            "Example A (balanced regional representation): United States, China, India, Brazil, Germany, South Africa, Indonesia, Mexico, Nigeria, Japan, France",
+            "Example B (development-finance heavy): Bangladesh, Kenya, Ethiopia, Vietnam, Philippines, Colombia, Egypt, Pakistan, Peru, Morocco, Ghana",
+            "Example C (health-systems and fiscal policy mix): Norway, Sweden, Canada, Rwanda, Thailand, Chile, Turkiye, United Arab Emirates, Argentina, Malaysia, Senegal"
+          ]
+        },
+        keyTermsByTopic: {
+          t1: [
+            { term: "Universal Basic Income (UBI)", meaning: "Regular unconditional cash transfer paid to all eligible residents.", links: [{ label: "World Bank - UBI explainer", url: "https://www.worldbank.org/en/topic/socialprotection/brief/ubiquitous-basic-income" }] },
+            { term: "Poverty Line", meaning: "Income threshold used to determine whether individuals live in poverty.", links: [{ label: "World Bank - Poverty", url: "https://www.worldbank.org/en/topic/poverty" }] },
+            { term: "Social Protection Floor", meaning: "Minimum set of social security guarantees for basic income and services.", links: [{ label: "ILO - Social protection floors", url: "https://www.ilo.org/global/topics/social-security/WCMS_503646/lang--en/index.htm" }] },
+            { term: "Targeted Cash Transfer", meaning: "Income support directed to specific populations based on eligibility criteria.", links: [{ label: "UNICEF - Cash transfers", url: "https://www.unicef.org/social-policy/cash-transfers" }] },
+            { term: "Means Testing", meaning: "Assessing income/assets to determine eligibility for a social benefit.", links: [{ label: "OECD - Social spending", url: "https://www.oecd.org/social/expenditure.htm" }] },
+            { term: "Fiscal Sustainability", meaning: "Ability of public finances to remain stable without unsustainable debt growth.", links: [{ label: "IMF - Fiscal policy", url: "https://www.imf.org/en/Topics/fiscal-policies" }] },
+            { term: "Budget Deficit", meaning: "When government spending exceeds government revenue in a fiscal year.", links: [{ label: "IMF Data", url: "https://www.imf.org/en/Data" }] },
+            { term: "Public Debt-to-GDP Ratio", meaning: "Indicator comparing a country's debt stock to annual economic output.", links: [{ label: "World Bank Data", url: "https://data.worldbank.org/" }] },
+            { term: "Progressive Taxation", meaning: "Tax system where higher-income groups pay higher effective tax rates.", links: [{ label: "OECD - Tax policy", url: "https://www.oecd.org/tax/" }] },
+            { term: "Inflationary Pressure", meaning: "Upward price pressure that can reduce the real value of cash benefits.", links: [{ label: "IMF - Inflation", url: "https://www.imf.org/en/Topics/inflation" }] },
+            { term: "Labor Market Participation", meaning: "Share of population actively working or seeking employment.", links: [{ label: "ILOSTAT", url: "https://ilostat.ilo.org/" }] },
+            { term: "Informal Economy", meaning: "Economic activity not fully regulated, taxed, or protected by formal systems.", links: [{ label: "ILO - Informal economy", url: "https://www.ilo.org/global/topics/employment-promotion/informal-economy/lang--en/index.htm" }] },
+            { term: "Administrative Capacity", meaning: "Institutional ability to deliver programs effectively and at scale.", links: [{ label: "UNDP - Governance", url: "https://www.undp.org/governance" }] },
+            { term: "Digital Public Infrastructure (DPI)", meaning: "Digital ID, payments, and data-exchange systems enabling public service delivery.", links: [{ label: "UNDP - Digital public infrastructure", url: "https://www.undp.org/digital/transformations/digital-public-infrastructure" }] },
+            { term: "Financial Inclusion", meaning: "Access to affordable, useful financial services for individuals and firms.", links: [{ label: "World Bank - Financial inclusion", url: "https://www.worldbank.org/en/topic/financialinclusion" }] },
+            { term: "Household Consumption Smoothing", meaning: "Maintaining stable household spending during income shocks or crises.", links: [{ label: "World Bank - Social protection", url: "https://www.worldbank.org/en/topic/socialprotection" }] },
+            { term: "Conditionality", meaning: "Policy rule requiring beneficiaries to meet specific conditions for support.", links: [{ label: "UNICEF - Social policy", url: "https://www.unicef.org/social-policy" }] },
+            { term: "Policy Pilot", meaning: "Limited trial implementation used to test outcomes before national rollout.", links: [{ label: "OECD - Policy experimentation", url: "https://www.oecd.org/gov/innovative-government/" }] },
+            { term: "Monitoring and Evaluation (M&E)", meaning: "Processes to track implementation quality and measure program outcomes.", links: [{ label: "UNDP - Results based management", url: "https://www.undp.org/publications/handbook-planning-monitoring-and-evaluating-development-results" }] },
+            { term: "Macroeconomic Stability", meaning: "Stable growth, inflation, and employment conditions across the economy.", links: [{ label: "IMF - Macroeconomic policy", url: "https://www.imf.org/en/Topics" }] }
+          ],
+          t2: [
+            { term: "Military Expenditure", meaning: "Government spending on armed forces, defense operations, and military systems.", links: [{ label: "SIPRI - Military expenditure", url: "https://www.sipri.org/databases/milex" }] },
+            { term: "Budget Reallocation", meaning: "Shifting resources from one spending area to another through fiscal policy.", links: [{ label: "IMF - Public financial management", url: "https://www.imf.org/en/Topics/Public-Financial-Management" }] },
+            { term: "Opportunity Cost", meaning: "Value of alternatives forgone when resources are used for a different purpose.", links: [{ label: "OECD - Economics glossary", url: "https://www.oecd.org/" }] },
+            { term: "Public Health Systems", meaning: "Institutions and services that prevent disease and provide population health care.", links: [{ label: "WHO - Health systems", url: "https://www.who.int/health-topics/health-systems-strengthening" }] },
+            { term: "Primary Health Care (PHC)", meaning: "First-contact, community-based care forming the foundation of health systems.", links: [{ label: "WHO - Primary health care", url: "https://www.who.int/health-topics/primary-health-care" }] },
+            { term: "Universal Health Coverage (UHC)", meaning: "Access to needed health services without financial hardship.", links: [{ label: "WHO - UHC", url: "https://www.who.int/health-topics/universal-health-coverage" }] },
+            { term: "Health Workforce Capacity", meaning: "Availability and competency of doctors, nurses, and allied professionals.", links: [{ label: "WHO - Health workforce", url: "https://www.who.int/health-topics/health-workforce" }] },
+            { term: "Pandemic Preparedness", meaning: "Planning and systems required to detect and respond to disease outbreaks.", links: [{ label: "WHO - Preparedness", url: "https://www.who.int/emergencies/preparedness" }] },
+            { term: "Surveillance Systems", meaning: "Data systems used to monitor disease patterns and public health threats.", links: [{ label: "WHO - Surveillance", url: "https://www.who.int/health-topics/disease-outbreaks#tab=tab_1" }] },
+            { term: "Essential Medicines Access", meaning: "Reliable availability of safe, effective, affordable priority medicines.", links: [{ label: "WHO - Essential medicines", url: "https://www.who.int/teams/health-product-policy-and-standards/essential-medicines-and-health-products" }] },
+            { term: "Health Equity", meaning: "Fair access to health services and outcomes across different populations.", links: [{ label: "WHO - Equity", url: "https://www.who.int/health-topics/health-equity" }] },
+            { term: "Disarmament for Development", meaning: "Concept linking reduced armament burdens to socio-economic development gains.", links: [{ label: "UNODA - Disarmament and development", url: "https://disarmament.unoda.org/" }] },
+            { term: "Dual-Use Spending", meaning: "Expenditures that can serve both security and civilian resilience outcomes.", links: [{ label: "UN - Peace and development", url: "https://www.un.org/en/" }] },
+            { term: "Budget Transparency", meaning: "Public access to government spending plans, data, and reporting.", links: [{ label: "Open Budget Survey", url: "https://internationalbudget.org/open-budget-survey/" }] },
+            { term: "Accountability Framework", meaning: "Set of rules and review processes that track commitments and performance.", links: [{ label: "UN SDG follow-up", url: "https://sdgs.un.org/" }] },
+            { term: "Sovereignty Concern", meaning: "State sensitivity about external influence over domestic spending decisions.", links: [{ label: "UN Charter", url: "https://www.un.org/en/about-us/un-charter" }] },
+            { term: "Development Assistance", meaning: "International aid and cooperation to support long-term socio-economic progress.", links: [{ label: "OECD - Development co-operation", url: "https://www.oecd.org/dac/" }] },
+            { term: "Health Financing", meaning: "How countries raise, pool, and spend funds for health services.", links: [{ label: "WHO - Health financing", url: "https://www.who.int/health-topics/health-financing" }] },
+            { term: "Resilient Infrastructure", meaning: "Facilities and systems designed to withstand shocks and disruptions.", links: [{ label: "UNDRR - Resilience", url: "https://www.undrr.org/" }] },
+            { term: "Outcome Indicators", meaning: "Measurable results used to assess policy impact over time.", links: [{ label: "World Bank indicators", url: "https://data.worldbank.org/indicator" }] }
+          ]
+        },
+        chairApplications: {
+          overview: "Chair applications are open to experienced MUN delegates who can facilitate rigorous, balanced, and inclusive debate for SEAMUN I 2027.",
+          eligibility: [
+            "At least 3 prior conference experiences (chairing preferred but not required).",
+            "Strong familiarity with UN procedure and substantive issue research.",
+            "Ability to provide timely delegate feedback and procedural guidance.",
+            "Commitment to complete chair training and full 2-day moderation responsibilities."
+          ],
+          process: [
+            "Submit online form with committee preference and statement of interest.",
+            "Upload CV and a background guide sample aligned to your preferred topic area.",
+            "Complete short interview focused on moderation, procedure, and crisis handling.",
+            "Finalize staff package payment after study guide approval."
+          ],
+          timeline: ["Applications Open: TBA", "Priority Deadline: TBA", "Interviews: TBA", "Decisions Released: TBA", "Conference Dates: January 23-24, 2027"],
+          applyLink: "mailto:secretariat@seamun.example?subject=ECOSOC%20Chair%20Application"
+        },
+        resources: [
+          { type: "UN", title: "UN ECOSOC Official Portal", description: "Mandates, sessions, subsidiary bodies, and official documentation.", url: "https://www.un.org/ecosoc/" },
+          { type: "UN", title: "UN SDG Knowledge Platform", description: "Data, reports, and implementation updates across SDG pillars.", url: "https://sdgs.un.org/" },
+          { type: "Data", title: "World Bank Open Data", description: "Country-level development indicators for evidence-based speeches.", url: "https://data.worldbank.org/" },
+          { type: "Data", title: "UN Data", description: "Cross-system UN statistics to support policy benchmarking.", url: "https://data.un.org/" },
+          { type: "Policy", title: "OECD Development Co-operation Directorate", description: "Insights on aid effectiveness and financing policy design.", url: "https://www.oecd.org/dac/" },
+          { type: "Policy", title: "IMF Policy Papers", description: "Macro-fiscal frameworks, debt analyses, and resilience financing.", url: "https://www.imf.org/en/Publications/Policy-Papers" }
+        ],
+        delegateHelp: [
+          "Bring a one-page policy brief with 3 concrete deliverables your delegation supports.",
+          "Prepare at least 6 moderated caucus speaking points and 2 unmoderated goals.",
+          "Use data in every speech: baseline, target, and implementation mechanism.",
+          "Coordinate blocs early but keep room for cross-regional compromise."
+        ],
+        faq: [
+          { q: "Will background guides be released here?", a: "Yes. Topic guides and update briefs will be posted in this portal as they are finalized." },
+          { q: "Are first-time delegates allowed in ECOSOC?", a: "Yes. ECOSOC is open to first-time delegates who are willing to prepare with policy depth." },
+          { q: "How formal should draft resolutions be?", a: "Use standard UN-style operative and preambulatory clauses with clear implementation language." }
+        ]
+      };
+
+      const byId = (id) => document.getElementById(id);
+      const renderList = (el, items) => { el.innerHTML = items.map((item) => "<li>" + item + "</li>").join(""); };
+
+      function renderTopics(topics) {
+        byId("topics-grid").innerHTML = topics.map((topic) => {
+          const questions = topic.guidingQuestions.map((q) => "<li>" + q + "</li>").join("");
+          const prep = topic.prepIdeas.map((p) => "<li>" + p + "</li>").join("");
+          return "<article class='card'>" +
+            "<h3>" + topic.title + "</h3>" +
+            "<p class='muted'>" + topic.summary + "</p>" +
+            "<strong>Guiding Questions</strong><ul>" + questions + "</ul>" +
+            "<strong>Preparation Ideas</strong><ul>" + prep + "</ul>" +
+          "</article>";
+        }).join("");
+      }
+
+      function renderFaq(faq) {
+        byId("faq-grid").innerHTML = faq.map((item) =>
+          "<article class='card'><h3>" + item.q + "</h3><p class='muted'>" + item.a + "</p></article>"
+        ).join("");
+      }
+
+      function renderResources(resources) {
+        byId("resources-grid").innerHTML = resources.map((r) =>
+          "<article class='card'>" +
+          "<h3>" + r.title + "</h3>" +
+          "<p class='muted'>" + r.description + "</p>" +
+          "<a class='btn' href='" + r.url + "' target='_blank' rel='noreferrer'>Open Resource</a>" +
+          "</article>"
+        ).join("");
+      }
+
+      function renderKeyTerms(termsByTopic, topics) {
+        byId("terms-grid").innerHTML = topics.map((topic) => {
+          const topicTerms = termsByTopic[topic.id] || [];
+          const termCards = topicTerms.map((item) => {
+            const links = item.links.map((link) => "<li><a href='" + link.url + "' target='_blank' rel='noreferrer'>" + link.label + "</a></li>").join("");
+            return "<article class='card'>" +
+              "<h3>" + item.term + "</h3>" +
+              "<p class='muted'>" + item.meaning + "</p>" +
+              "<strong>Learn More</strong><ul class='term-links'>" + links + "</ul>" +
+            "</article>";
+          }).join("");
+          return "<section style='border:none;padding:0 0 1rem;'>" +
+            "<h3>" + topic.title + "</h3>" +
+            "<p class='muted'>Key terms for this topic: " + topicTerms.length + "</p>" +
+            "<div class='grid'>" + termCards + "</div>" +
+            "</section>";
+        }).join("");
+      }
+
+      function hydratePage() {
+        byId("conference-kicker").textContent = data.conference.name + " Committee Portal";
+        byId("committee-title").textContent = data.conference.committee;
+        byId("committee-subtitle").textContent = data.conference.subtitle;
+        byId("conference-location").textContent = data.conference.location;
+        byId("conference-dates").textContent = data.conference.dates;
+
+        byId("about-mission").textContent = data.about.mission;
+        byId("about-focus").textContent = data.about.focus;
+        renderList(byId("delegate-help-list"), data.delegateHelp);
+
+        byId("conference-slogan").textContent = "Theme: " + data.conferenceInfo.slogan;
+        renderList(byId("conference-meta-list"), [data.conferenceInfo.format, data.conferenceInfo.committeeCount, data.conferenceInfo.delegateCapacity]);
+        renderList(byId("conference-fees-list"), data.conferenceInfo.fees);
+        renderList(byId("conference-sessions-list"), data.conferenceInfo.sessionPlan);
+
+        renderTopics(data.topics);
+        byId("allocation-notes").textContent = data.allocationExamples.notes;
+        renderList(byId("allocation-matrix-list"), data.allocationExamples.matrixSummary);
+        renderList(byId("allocation-examples-list"), data.allocationExamples.sampleCountryAllocations);
+        renderKeyTerms(data.keyTermsByTopic, data.topics);
+
+        byId("chairs-overview").textContent = data.chairApplications.overview;
+        renderList(byId("chairs-eligibility"), data.chairApplications.eligibility);
+        renderList(byId("chairs-process"), data.chairApplications.process);
+        renderList(byId("chairs-timeline"), data.chairApplications.timeline);
+        byId("chairs-apply-link").href = data.chairApplications.applyLink;
+
+        const searchInput = byId("resource-search");
+        const filterSelect = byId("resource-filter");
+        const applyFilters = () => {
+          const keyword = searchInput.value.trim().toLowerCase();
+          const type = filterSelect.value;
+          const filtered = data.resources.filter((resource) => {
+            const matchesType = type === "all" || resource.type === type;
+            const haystack = (resource.title + " " + resource.description).toLowerCase();
+            return matchesType && (keyword.length === 0 || haystack.includes(keyword));
+          });
+          renderResources(filtered);
+        };
+        searchInput.addEventListener("input", applyFilters);
+        filterSelect.addEventListener("change", applyFilters);
+        renderResources(data.resources);
+
+        renderFaq(data.faq);
+      }
+
+      hydratePage();
+    </script>
+  </body>
+</html>
