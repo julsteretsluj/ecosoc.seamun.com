@@ -210,12 +210,12 @@
       <section class="hero">
         <div class="container hero-inner">
           <div>
-            <p class="kicker" id="conference-kicker">SEAMUN Committee Portal</p>
-            <h1 id="committee-title">Economic and Social Council (ECOSOC)</h1>
-            <p class="lead" id="committee-subtitle"></p>
+            <p class="kicker">SEAMUN I 2027 Committee Portal</p>
+            <h1>Economic and Social Council (ECOSOC)</h1>
+            <p class="lead">Committee portal for topic preparation, chair applications, and conference readiness.</p>
             <div class="meta">
-              <span class="pill" id="conference-location"></span>
-              <span class="pill" id="conference-dates"></span>
+              <span class="pill">Bangkok</span>
+              <span class="pill">January 23-24, 2027</span>
             </div>
           </div>
           <div class="hero-logo-panel">
@@ -231,22 +231,43 @@
           <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
             <article class="card">
               <h3>Conference</h3>
-              <p class="muted" id="conference-slogan"></p>
-              <ul id="conference-meta-list" style="margin-top:0.5rem;"></ul>
-              <ul id="conference-fees-list" style="margin-top:0.5rem;"></ul>
-              <p class="muted" id="conference-donation" style="margin-top:0.75rem;font-size:0.9rem;"></p>
+              <p class="muted">Theme: Policies with a Purpose</p>
+              <ul style="margin-top:0.5rem;">
+                <li>2-day conference</li>
+                <li>10 committees total</li>
+                <li>200 delegates</li>
+                <li>9 hours committee debate across 2 days</li>
+              </ul>
+              <ul style="margin-top:0.5rem;">
+                <li>Delegate fee (2-day): 2,000 THB</li>
+                <li>Chair staff package fee: 800 THB</li>
+              </ul>
+              <p class="muted" style="margin-top:0.75rem;font-size:0.9rem;">100% of conference surplus is donated to the Thai Red Cross Society (TRCS).</p>
             </article>
             <article class="card">
               <h3>ECOSOC Snapshot</h3>
-              <ul id="allocation-matrix-list"></ul>
-              <button class="collapse-trigger" id="countries-toggle" aria-expanded="false">View 22 country allocations</button>
+              <ul>
+                <li>ECOSOC allocation: 22 delegates</li>
+                <li>ECOSOC dais: 2 chairs (Head Chair + Deputy Chair)</li>
+                <li>ECOSOC total room size: 24 participants</li>
+              </ul>
+              <button class="collapse-trigger" data-target="countries-content" aria-expanded="false">View 22 country allocations</button>
               <div class="collapse-content" id="countries-content">
-                <ul id="allocation-countries-list" class="compact-list" style="margin-top:0.5rem;"></ul>
+                <ul class="compact-list" style="margin-top:0.5rem;">
+                  <li>Bangladesh</li><li>Brazil</li><li>China</li><li>Costa Rica</li><li>Cuba</li><li>Ethiopia</li><li>Finland</li><li>Germany</li>
+                  <li>India</li><li>Indonesia</li><li>Israel</li><li>Japan</li><li>Norway</li><li>Russia</li><li>Saudi Arabia</li><li>Singapore</li>
+                  <li>South Africa</li><li>South Korea</li><li>Switzerland</li><li>Thailand</li><li>United States</li><li>Vietnam</li>
+                </ul>
               </div>
             </article>
             <article class="card">
               <h3>Delegate Checklist</h3>
-              <ul id="delegate-help-list"></ul>
+              <ul>
+                <li>Bring a one-page policy brief with 3 concrete deliverables your delegation supports.</li>
+                <li>Prepare at least 6 moderated caucus speaking points and 2 unmoderated goals.</li>
+                <li>Use data in every speech: baseline, target, and implementation mechanism.</li>
+                <li>Coordinate blocs early but keep room for cross-regional compromise.</li>
+              </ul>
             </article>
           </div>
         </div>
@@ -256,7 +277,46 @@
         <div class="container">
           <h2>Agenda Topics</h2>
           <p class="muted section-intro">Two topics for committee debate. Expand each for guiding questions and prep ideas.</p>
-          <div id="topics-grid" class="grid"></div>
+          <div id="topics-grid" class="grid">
+            <article class="card">
+              <h3>The Question of Implementing Globally Coordinated Universal Basic Income (UBI) as a Public Health Strategy</h3>
+              <p class="muted">Debate whether a globally coordinated UBI framework can reduce extreme poverty and support public health while preserving fiscal sustainability, labor incentives, and macroeconomic stability across diverse national contexts.</p>
+              <button class="collapse-trigger" data-target="topic-q-0" aria-expanded="false">Guiding questions &amp; prep ideas</button>
+              <div class="collapse-content" id="topic-q-0">
+                <strong>Guiding Questions</strong>
+                <ul>
+                  <li>Should ECOSOC recommend universal design principles for UBI or region-specific implementation models?</li>
+                  <li>What financing mechanisms can support UBI pilots without destabilizing national budgets?</li>
+                  <li>How should states measure poverty-reduction outcomes and labor market effects?</li>
+                </ul>
+                <strong>Preparation Ideas</strong>
+                <ul>
+                  <li>Compare at least two national cash-transfer or income-support models.</li>
+                  <li>Prepare evidence on fiscal trade-offs, inflation concerns, and social protection outcomes.</li>
+                  <li>Draft implementation clauses with timelines, safeguards, and monitoring indicators.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="card">
+              <h3>The Question of Establishing Frameworks for Reallocating Global Military Expenditure to Public Health Infrastructure</h3>
+              <p class="muted">Examine policy frameworks for redirecting a portion of military expenditure toward resilient and equitable public health infrastructure, especially in low- and middle-income settings.</p>
+              <button class="collapse-trigger" data-target="topic-q-1" aria-expanded="false">Guiding questions &amp; prep ideas</button>
+              <div class="collapse-content" id="topic-q-1">
+                <strong>Guiding Questions</strong>
+                <ul>
+                  <li>What international accountability mechanisms could govern reallocation commitments?</li>
+                  <li>How can states balance sovereignty and security concerns with global health obligations?</li>
+                  <li>Which public-health investments should be prioritized for measurable long-term impact?</li>
+                </ul>
+                <strong>Preparation Ideas</strong>
+                <ul>
+                  <li>Collect military spending and public-health spending trend data for your assigned country.</li>
+                  <li>Map feasible national pathways for partial budget reallocation or dual-use investments.</li>
+                  <li>Write clauses that include funding transparency, implementation oversight, and reporting benchmarks.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -264,24 +324,49 @@
         <div class="container">
           <h2>Key Terms</h2>
           <p class="muted section-intro">Glossary for each topic with links to further reading. Expand to browse.</p>
-          <div id="terms-grid"></div>
+          <div id="terms-grid">
+            <div style="margin-bottom:1rem;">
+              <button class="collapse-trigger" data-target="terms-0" aria-expanded="false">Topic 1: UBI &amp; Public Health (20 terms)</button>
+              <div class="collapse-content" id="terms-0"><div class="grid" style="margin-top:0.75rem;" id="terms-t1-grid"></div></div>
+            </div>
+            <div style="margin-bottom:1rem;">
+              <button class="collapse-trigger" data-target="terms-1" aria-expanded="false">Topic 2: Military Expenditure &amp; Health (20 terms)</button>
+              <div class="collapse-content" id="terms-1"><div class="grid" style="margin-top:0.75rem;" id="terms-t2-grid"></div></div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="chairs">
         <div class="container">
           <h2>Chair Applications</h2>
-          <p class="muted section-intro" id="chairs-overview"></p>
+          <p class="muted section-intro">Chair applications are open to experienced MUN delegates who can facilitate rigorous, balanced, and inclusive debate for SEAMUN I 2027.</p>
           <div class="split">
             <article class="card">
-              <h3>Eligibility & Process</h3>
-              <ul id="chairs-eligibility"></ul>
-              <ul id="chairs-process" style="margin-top:0.75rem;"></ul>
-              <a id="chairs-apply-link" class="btn" href="#">Apply for ECOSOC Chair</a>
+              <h3>Eligibility &amp; Process</h3>
+              <ul>
+                <li>At least 3 prior conference experiences (chairing preferred but not required).</li>
+                <li>Strong familiarity with UN procedure and substantive issue research.</li>
+                <li>Ability to provide timely delegate feedback and procedural guidance.</li>
+                <li>Commitment to complete chair training and full 2-day moderation responsibilities.</li>
+              </ul>
+              <ul style="margin-top:0.75rem;">
+                <li>Submit online form with committee preference and statement of interest.</li>
+                <li>Upload CV and a background guide sample aligned to your preferred topic area.</li>
+                <li>Complete short interview focused on moderation, procedure, and crisis handling.</li>
+                <li>Finalize staff package payment after study guide approval.</li>
+              </ul>
+              <a class="btn" href="mailto:juleskittoastrop@gmail.com?subject=ECOSOC%20Chair%20Application%20-%20SEAMUN%20I%202027">Apply for ECOSOC Chair</a>
             </article>
             <article class="card">
               <h3>Timeline</h3>
-              <ul id="chairs-timeline"></ul>
+              <ul>
+                <li>Applications Open: TBA</li>
+                <li>Priority Deadline: TBA</li>
+                <li>Interviews: TBA</li>
+                <li>Decisions Released: TBA</li>
+                <li>Conference Dates: January 23-24, 2027</li>
+              </ul>
             </article>
           </div>
         </div>
@@ -300,14 +385,58 @@
               <option value="Policy">Policy</option>
             </select>
           </div>
-          <div id="resources-grid" class="grid"></div>
+          <div id="resources-grid" class="grid">
+            <article class="card" data-type="UN">
+              <h3>UN ECOSOC Official Portal</h3>
+              <p class="muted">Mandates, sessions, subsidiary bodies, and official documentation.</p>
+              <a class="btn" href="https://www.un.org/ecosoc/" target="_blank" rel="noreferrer">Open Resource</a>
+            </article>
+            <article class="card" data-type="UN">
+              <h3>UN SDG Knowledge Platform</h3>
+              <p class="muted">Data, reports, and implementation updates across SDG pillars.</p>
+              <a class="btn" href="https://sdgs.un.org/" target="_blank" rel="noreferrer">Open Resource</a>
+            </article>
+            <article class="card" data-type="Data">
+              <h3>World Bank Open Data</h3>
+              <p class="muted">Country-level development indicators for evidence-based speeches.</p>
+              <a class="btn" href="https://data.worldbank.org/" target="_blank" rel="noreferrer">Open Resource</a>
+            </article>
+            <article class="card" data-type="Data">
+              <h3>UN Data</h3>
+              <p class="muted">Cross-system UN statistics to support policy benchmarking.</p>
+              <a class="btn" href="https://data.un.org/" target="_blank" rel="noreferrer">Open Resource</a>
+            </article>
+            <article class="card" data-type="Policy">
+              <h3>OECD Development Co-operation Directorate</h3>
+              <p class="muted">Insights on aid effectiveness and financing policy design.</p>
+              <a class="btn" href="https://www.oecd.org/dac/" target="_blank" rel="noreferrer">Open Resource</a>
+            </article>
+            <article class="card" data-type="Policy">
+              <h3>IMF Policy Papers</h3>
+              <p class="muted">Macro-fiscal frameworks, debt analyses, and resilience financing.</p>
+              <a class="btn" href="https://www.imf.org/en/Publications/Policy-Papers" target="_blank" rel="noreferrer">Open Resource</a>
+            </article>
+          </div>
         </div>
       </section>
 
       <section id="faq">
         <div class="container">
           <h2>FAQ</h2>
-          <div id="faq-grid" class="grid"></div>
+          <div id="faq-grid" class="grid">
+            <article class="card">
+              <h3>Will background guides be released here?</h3>
+              <p class="muted">Yes. Topic guides and update briefs will be posted in this portal as they are finalized.</p>
+            </article>
+            <article class="card">
+              <h3>Are first-time delegates allowed in ECOSOC?</h3>
+              <p class="muted">Yes. ECOSOC is open to first-time delegates who are willing to prepare with policy depth.</p>
+            </article>
+            <article class="card">
+              <h3>How formal should draft resolutions be?</h3>
+              <p class="muted">Use standard UN-style operative and preambulatory clauses with clear implementation language.</p>
+            </article>
+          </div>
         </div>
       </section>
     </main>
@@ -320,33 +449,6 @@
 
     <script>
       const data = {
-        conference: {
-          name: "SEAMUN I 2027",
-          committee: "Economic and Social Council (ECOSOC)",
-          subtitle: "Committee portal for topic preparation, chair applications, and conference readiness.",
-          location: "Bangkok",
-          dates: "January 23-24, 2027"
-        },
-        conferenceInfo: {
-          slogan: "Policies with a Purpose",
-          format: "2-day conference",
-          delegateCapacity: "200 delegates",
-          committeeCount: "10 committees total",
-          fees: [
-            "Delegate fee (2-day): 2,000 THB",
-            "Chair staff package fee: 800 THB"
-          ],
-          donationNote: "100% of conference surplus is donated to the Thai Red Cross Society (TRCS).",
-          sessionPlan: [
-            "Day 1: three committee sessions, total 4.5 hours",
-            "Day 2: three committee sessions, total 4.5 hours",
-            "Total committee debate time across conference: 9 hours"
-          ]
-        },
-        about: {
-          mission: "ECOSOC coordinates the UN's economic, social, and development work, connecting policy to implementation through specialized agencies and regional commissions.",
-          focus: "At conference, delegates balance macro-level policy tradeoffs with practical outcomes, emphasizing equitable growth, resilience, and measurable impact."
-        },
         topics: [
           {
             id: "t1",
@@ -379,19 +481,6 @@
             ]
           }
         ],
-        allocationExamples: {
-          notes: "Country allocations are managed by Delegate Affairs. The list below reflects the current ECOSOC matrix.",
-          matrixSummary: [
-            "ECOSOC allocation: 22 delegates",
-            "ECOSOC dais: 2 chairs (Head Chair + Deputy Chair)",
-            "ECOSOC total room size: 24 participants"
-          ],
-          countries: [
-            "Bangladesh", "Brazil", "China", "Costa Rica", "Cuba", "Ethiopia", "Finland", "Germany",
-            "India", "Indonesia", "Israel", "Japan", "Norway", "Russia", "Saudi Arabia", "Singapore",
-            "South Africa", "South Korea", "Switzerland", "Thailand", "United States", "Vietnam"
-          ]
-        },
         keyTermsByTopic: {
           t1: [
             { term: "Universal Basic Income (UBI)", meaning: "Regular unconditional cash transfer paid to all eligible residents.", links: [{ label: "World Bank - UBI explainer", url: "https://www.worldbank.org/en/topic/socialprotection/brief/ubiquitous-basic-income" }] },
@@ -436,156 +525,56 @@
             { term: "Health Financing", meaning: "How countries raise, pool, and spend funds for health services.", links: [{ label: "WHO - Health financing", url: "https://www.who.int/health-topics/health-financing" }] },
             { term: "Resilient Infrastructure", meaning: "Facilities and systems designed to withstand shocks and disruptions.", links: [{ label: "UNDRR - Resilience", url: "https://www.undrr.org/" }] },
             { term: "Outcome Indicators", meaning: "Measurable results used to assess policy impact over time.", links: [{ label: "World Bank indicators", url: "https://data.worldbank.org/indicator" }] }
-          ]
-        },
-        chairApplications: {
-          overview: "Chair applications are open to experienced MUN delegates who can facilitate rigorous, balanced, and inclusive debate for SEAMUN I 2027.",
-          eligibility: [
-            "At least 3 prior conference experiences (chairing preferred but not required).",
-            "Strong familiarity with UN procedure and substantive issue research.",
-            "Ability to provide timely delegate feedback and procedural guidance.",
-            "Commitment to complete chair training and full 2-day moderation responsibilities."
-          ],
-          process: [
-            "Submit online form with committee preference and statement of interest.",
-            "Upload CV and a background guide sample aligned to your preferred topic area.",
-            "Complete short interview focused on moderation, procedure, and crisis handling.",
-            "Finalize staff package payment after study guide approval."
-          ],
-          timeline: ["Applications Open: TBA", "Priority Deadline: TBA", "Interviews: TBA", "Decisions Released: TBA", "Conference Dates: January 23-24, 2027"],
-          applyLink: "mailto:juleskittoastrop@gmail.com?subject=ECOSOC%20Chair%20Application%20-%20SEAMUN%20I%202027"
-        },
-        resources: [
-          { type: "UN", title: "UN ECOSOC Official Portal", description: "Mandates, sessions, subsidiary bodies, and official documentation.", url: "https://www.un.org/ecosoc/" },
-          { type: "UN", title: "UN SDG Knowledge Platform", description: "Data, reports, and implementation updates across SDG pillars.", url: "https://sdgs.un.org/" },
-          { type: "Data", title: "World Bank Open Data", description: "Country-level development indicators for evidence-based speeches.", url: "https://data.worldbank.org/" },
-          { type: "Data", title: "UN Data", description: "Cross-system UN statistics to support policy benchmarking.", url: "https://data.un.org/" },
-          { type: "Policy", title: "OECD Development Co-operation Directorate", description: "Insights on aid effectiveness and financing policy design.", url: "https://www.oecd.org/dac/" },
-          { type: "Policy", title: "IMF Policy Papers", description: "Macro-fiscal frameworks, debt analyses, and resilience financing.", url: "https://www.imf.org/en/Publications/Policy-Papers" }
-        ],
-        delegateHelp: [
-          "Bring a one-page policy brief with 3 concrete deliverables your delegation supports.",
-          "Prepare at least 6 moderated caucus speaking points and 2 unmoderated goals.",
-          "Use data in every speech: baseline, target, and implementation mechanism.",
-          "Coordinate blocs early but keep room for cross-regional compromise."
-        ],
-        faq: [
-          { q: "Will background guides be released here?", a: "Yes. Topic guides and update briefs will be posted in this portal as they are finalized." },
-          { q: "Are first-time delegates allowed in ECOSOC?", a: "Yes. ECOSOC is open to first-time delegates who are willing to prepare with policy depth." },
-          { q: "How formal should draft resolutions be?", a: "Use standard UN-style operative and preambulatory clauses with clear implementation language." }
-        ]
       };
 
       const byId = (id) => document.getElementById(id);
-      const renderList = (el, items) => { el.innerHTML = items.map((item) => "<li>" + item + "</li>").join(""); };
 
-      function renderTopics(topics) {
-        byId("topics-grid").innerHTML = topics.map((topic, i) => {
-          const qid = "topic-q-" + i;
-          const questions = topic.guidingQuestions.map((q) => "<li>" + q + "</li>").join("");
-          const prep = topic.prepIdeas.map((p) => "<li>" + p + "</li>").join("");
-          return "<article class='card'>" +
-            "<h3>" + topic.title + "</h3>" +
-            "<p class='muted'>" + topic.summary + "</p>" +
-            "<button class='collapse-trigger' data-target='" + qid + "' aria-expanded='false'>Guiding questions & prep ideas</button>" +
-            "<div class='collapse-content' id='" + qid + "'>" +
-            "<strong>Guiding Questions</strong><ul>" + questions + "</ul>" +
-            "<strong>Preparation Ideas</strong><ul>" + prep + "</ul>" +
-            "</div>" +
-          "</article>";
-        }).join("");
+      function renderKeyTermsToGrids() {
+        const t1 = byId("terms-t1-grid");
+        const t2 = byId("terms-t2-grid");
+        if (!t1 || !t2) return;
+        const terms1 = data.keyTermsByTopic.t1 || [];
+        const terms2 = data.keyTermsByTopic.t2 || [];
+        const toCard = (item) => {
+          const links = (item.links || []).map((l) => "<li><a href='" + l.url + "' target='_blank' rel='noreferrer'>" + l.label + "</a></li>").join("");
+          return "<article class='card'><h3>" + item.term + "</h3><p class='muted'>" + item.meaning + "</p><strong>Learn More</strong><ul class='term-links'>" + links + "</ul></article>";
+        };
+        t1.innerHTML = terms1.map(toCard).join("");
+        t2.innerHTML = terms2.map(toCard).join("");
       }
 
-      function renderFaq(faq) {
-        byId("faq-grid").innerHTML = faq.map((item) =>
-          "<article class='card'><h3>" + item.q + "</h3><p class='muted'>" + item.a + "</p></article>"
-        ).join("");
-      }
-
-      function renderResources(resources) {
-        byId("resources-grid").innerHTML = resources.map((r) =>
-          "<article class='card'>" +
-          "<h3>" + r.title + "</h3>" +
-          "<p class='muted'>" + r.description + "</p>" +
-          "<a class='btn' href='" + r.url + "' target='_blank' rel='noreferrer'>Open Resource</a>" +
-          "</article>"
-        ).join("");
-      }
-
-      function renderKeyTerms(termsByTopic, topics) {
-        byId("terms-grid").innerHTML = topics.map((topic, i) => {
-          const topicTerms = termsByTopic[topic.id] || [];
-          const tid = "terms-" + i;
-          const termCards = topicTerms.map((item) => {
-            const links = item.links.map((link) => "<li><a href='" + link.url + "' target='_blank' rel='noreferrer'>" + link.label + "</a></li>").join("");
-            return "<article class='card'>" +
-              "<h3>" + item.term + "</h3>" +
-              "<p class='muted'>" + item.meaning + "</p>" +
-              "<strong>Learn More</strong><ul class='term-links'>" + links + "</ul>" +
-            "</article>";
-          }).join("");
-          const shortLabel = topic.id === "t1" ? "Topic 1: UBI & Public Health" : "Topic 2: Military Expenditure & Health";
-          return "<div style='margin-bottom:1rem;'>" +
-            "<button class='collapse-trigger' data-target='" + tid + "' aria-expanded='false'>" + shortLabel + " (" + topicTerms.length + " terms)</button>" +
-            "<div class='collapse-content' id='" + tid + "'><div class='grid' style='margin-top:0.75rem;'>" + termCards + "</div></div>" +
-            "</div>";
-        }).join("");
-      }
-
-      function hydratePage() {
-        byId("conference-kicker").textContent = data.conference.name + " Committee Portal";
-        byId("committee-title").textContent = data.conference.committee;
-        byId("committee-subtitle").textContent = data.conference.subtitle;
-        byId("conference-location").textContent = data.conference.location;
-        byId("conference-dates").textContent = data.conference.dates;
-
-        renderList(byId("delegate-help-list"), data.delegateHelp);
-
-        byId("conference-slogan").textContent = "Theme: " + data.conferenceInfo.slogan;
-        renderList(byId("conference-meta-list"), [data.conferenceInfo.format, data.conferenceInfo.committeeCount, data.conferenceInfo.delegateCapacity, "9 hours committee debate across 2 days"]);
-        renderList(byId("conference-fees-list"), data.conferenceInfo.fees);
-        if (data.conferenceInfo.donationNote) byId("conference-donation").textContent = data.conferenceInfo.donationNote;
-
-        renderTopics(data.topics);
-        renderList(byId("allocation-matrix-list"), data.allocationExamples.matrixSummary);
-        renderList(byId("allocation-countries-list"), data.allocationExamples.countries || []);
-        renderKeyTerms(data.keyTermsByTopic, data.topics);
-
+      function init() {
+        renderKeyTermsToGrids();
         document.querySelectorAll(".collapse-trigger").forEach((btn) => {
           btn.addEventListener("click", () => {
             const open = btn.getAttribute("aria-expanded") === "true";
             btn.setAttribute("aria-expanded", !open);
-            const target = byId(btn.getAttribute("data-target") || btn.id.replace("-toggle", "-content"));
+            const target = byId(btn.getAttribute("data-target"));
             if (target) target.classList.toggle("open", !open);
           });
         });
-
-        byId("chairs-overview").textContent = data.chairApplications.overview;
-        renderList(byId("chairs-eligibility"), data.chairApplications.eligibility);
-        renderList(byId("chairs-process"), data.chairApplications.process);
-        renderList(byId("chairs-timeline"), data.chairApplications.timeline);
-        byId("chairs-apply-link").href = data.chairApplications.applyLink;
-
         const searchInput = byId("resource-search");
         const filterSelect = byId("resource-filter");
-        const applyFilters = () => {
-          const keyword = searchInput.value.trim().toLowerCase();
-          const type = filterSelect.value;
-          const filtered = data.resources.filter((resource) => {
-            const matchesType = type === "all" || resource.type === type;
-            const haystack = (resource.title + " " + resource.description).toLowerCase();
-            return matchesType && (keyword.length === 0 || haystack.includes(keyword));
-          });
-          renderResources(filtered);
-        };
-        searchInput.addEventListener("input", applyFilters);
-        filterSelect.addEventListener("change", applyFilters);
-        renderResources(data.resources);
-
-        renderFaq(data.faq);
+        const grid = byId("resources-grid");
+        if (searchInput && filterSelect && grid) {
+          const cards = grid.querySelectorAll(".card");
+          const applyFilters = () => {
+            const keyword = searchInput.value.trim().toLowerCase();
+            const type = filterSelect.value;
+            cards.forEach((card) => {
+              const cardType = card.getAttribute("data-type") || "";
+              const text = (card.textContent || "").toLowerCase();
+              const matchesType = type === "all" || cardType === type;
+              const matchesSearch = !keyword || text.includes(keyword);
+              card.style.display = matchesType && matchesSearch ? "" : "none";
+            });
+          };
+          searchInput.addEventListener("input", applyFilters);
+          filterSelect.addEventListener("change", applyFilters);
+        }
       }
 
-      hydratePage();
+      try { init(); } catch (e) { console.warn("ECOSOC init:", e); }
     </script>
   </body>
 </html>
