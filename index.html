@@ -164,9 +164,24 @@
       }
       .btn:hover { filter: brightness(1.1); box-shadow: 0 6px 20px rgba(212, 168, 83, 0.4); }
       .footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: 0.9rem; }
+      .collapse-trigger {
+        display: flex; align-items: center; justify-content: space-between;
+        width: 100%; background: none; border: none; color: var(--gold-light);
+        font: inherit; font-size: 0.95rem; cursor: pointer; padding: 0.6rem 0;
+        text-align: left;
+      }
+      .collapse-trigger:hover { color: var(--gold); }
+      .collapse-trigger::after { content: "+"; font-size: 1.2rem; opacity: 0.8; }
+      .collapse-trigger[aria-expanded="true"]::after { content: "−"; }
+      .collapse-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+      .collapse-content.open { max-height: 2000px; }
+      .section-intro { max-width: 52ch; margin-bottom: 1.5rem; }
+      .compact-list { columns: 2; column-gap: 2rem; }
+      .compact-list li { break-inside: avoid; }
       @media (max-width: 820px) {
         .split, .hero-inner { grid-template-columns: 1fr; }
         .hero-logo-panel { justify-self: start; max-width: 260px; }
+        .compact-list { columns: 1; }
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -181,11 +196,10 @@
           SEAMUN <span>ECOSOC</span>
         </a>
         <ul class="links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#conference">Conference</a></li>
+          <li><a href="#overview">Overview</a></li>
           <li><a href="#topics">Topics</a></li>
           <li><a href="#terms">Key Terms</a></li>
-          <li><a href="#chairs">Chair Apps</a></li>
+          <li><a href="#chairs">Chairs</a></li>
           <li><a href="#resources">Resources</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
@@ -210,34 +224,30 @@
         </div>
       </section>
 
-      <section id="about">
-        <div class="container split">
-          <div class="card">
-            <h2>About This Committee</h2>
-            <p class="muted" id="about-mission"></p>
-            <p class="muted" id="about-focus"></p>
-          </div>
-          <div class="card">
-            <h2>Delegate Readiness Checklist</h2>
-            <ul id="delegate-help-list"></ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="conference">
-        <div class="container split">
-          <div class="card">
-            <h2>SEAMUN I 2027 Conference Details</h2>
-            <p class="muted" id="conference-slogan"></p>
-            <ul id="conference-meta-list"></ul>
-            <p class="muted" id="conference-donation" style="margin-top:1rem;"></p>
-          </div>
-          <div class="card">
-            <h2>Fees and Session Structure</h2>
-            <h3>Registration Fees</h3>
-            <ul id="conference-fees-list"></ul>
-            <h3>Committee Session Plan</h3>
-            <ul id="conference-sessions-list"></ul>
+      <section id="overview">
+        <div class="container">
+          <h2>Overview</h2>
+          <p class="muted section-intro">ECOSOC coordinates the UN's economic, social, and development work. At SEAMUN I 2027, delegates will balance policy ambition with implementation feasibility.</p>
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+            <article class="card">
+              <h3>Conference</h3>
+              <p class="muted" id="conference-slogan"></p>
+              <ul id="conference-meta-list" style="margin-top:0.5rem;"></ul>
+              <ul id="conference-fees-list" style="margin-top:0.5rem;"></ul>
+              <p class="muted" id="conference-donation" style="margin-top:0.75rem;font-size:0.9rem;"></p>
+            </article>
+            <article class="card">
+              <h3>ECOSOC Snapshot</h3>
+              <ul id="allocation-matrix-list"></ul>
+              <button class="collapse-trigger" id="countries-toggle" aria-expanded="false">View 22 country allocations</button>
+              <div class="collapse-content" id="countries-content">
+                <ul id="allocation-countries-list" class="compact-list" style="margin-top:0.5rem;"></ul>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Delegate Checklist</h3>
+              <ul id="delegate-help-list"></ul>
+            </article>
           </div>
         </div>
       </section>
@@ -245,43 +255,34 @@
       <section id="topics">
         <div class="container">
           <h2>Agenda Topics</h2>
-          <p class="muted">This static website includes the full ECOSOC content and does not require a backend server.</p>
+          <p class="muted section-intro">Two topics for committee debate. Expand each for guiding questions and prep ideas.</p>
           <div id="topics-grid" class="grid"></div>
-          <div class="grid">
-            <article class="card">
-              <h3>Allocation Examples</h3>
-              <p id="allocation-notes" class="muted"></p>
-              <h3>ECOSOC Matrix Snapshot</h3>
-              <ul id="allocation-matrix-list"></ul>
-              <h3>ECOSOC Country Allocations</h3>
-              <ul id="allocation-countries-list"></ul>
-            </article>
-          </div>
         </div>
       </section>
 
       <section id="terms">
         <div class="container">
           <h2>Key Terms</h2>
-          <p class="muted">20 key terms are listed for each topic with learning links.</p>
+          <p class="muted section-intro">Glossary for each topic with links to further reading. Expand to browse.</p>
           <div id="terms-grid"></div>
         </div>
       </section>
 
       <section id="chairs">
-        <div class="container split">
-          <div class="card">
-            <h2>Chair Applications</h2>
-            <p class="muted" id="chairs-overview"></p>
-            <h3>Eligibility</h3>
-            <ul id="chairs-eligibility"></ul>
-            <h3>Application Process</h3>
-            <ul id="chairs-process"></ul>
-            <a id="chairs-apply-link" class="btn" href="#">Apply for ECOSOC Chair</a>
-          </div>
-          <div class="card">
-            <h2>Timeline</h2>
-            <ul id="chairs-timeline"></ul>
+        <div class="container">
+          <h2>Chair Applications</h2>
+          <p class="muted section-intro" id="chairs-overview"></p>
+          <div class="split">
+            <article class="card">
+              <h3>Eligibility & Process</h3>
+              <ul id="chairs-eligibility"></ul>
+              <ul id="chairs-process" style="margin-top:0.75rem;"></ul>
+              <a id="chairs-apply-link" class="btn" href="#">Apply for ECOSOC Chair</a>
+            </article>
+            <article class="card">
+              <h3>Timeline</h3>
+              <ul id="chairs-timeline"></ul>
+            </article>
           </div>
         </div>
       </section>
@@ -335,7 +336,7 @@
             "Delegate fee (2-day): 2,000 THB",
             "Chair staff package fee: 800 THB"
           ],
-          donationNote: "100% of conference surplus is donated to the MDCU Foundation (King Chulalongkorn Memorial Hospital).",
+          donationNote: "100% of conference surplus is donated to the Thai Red Cross Society (TRCS).",
           sessionPlan: [
             "Day 1: three committee sessions, total 4.5 hours",
             "Day 2: three committee sessions, total 4.5 hours",
@@ -479,14 +480,18 @@
       const renderList = (el, items) => { el.innerHTML = items.map((item) => "<li>" + item + "</li>").join(""); };
 
       function renderTopics(topics) {
-        byId("topics-grid").innerHTML = topics.map((topic) => {
+        byId("topics-grid").innerHTML = topics.map((topic, i) => {
+          const qid = "topic-q-" + i;
           const questions = topic.guidingQuestions.map((q) => "<li>" + q + "</li>").join("");
           const prep = topic.prepIdeas.map((p) => "<li>" + p + "</li>").join("");
           return "<article class='card'>" +
             "<h3>" + topic.title + "</h3>" +
             "<p class='muted'>" + topic.summary + "</p>" +
+            "<button class='collapse-trigger' data-target='" + qid + "' aria-expanded='false'>Guiding questions & prep ideas</button>" +
+            "<div class='collapse-content' id='" + qid + "'>" +
             "<strong>Guiding Questions</strong><ul>" + questions + "</ul>" +
             "<strong>Preparation Ideas</strong><ul>" + prep + "</ul>" +
+            "</div>" +
           "</article>";
         }).join("");
       }
@@ -508,8 +513,9 @@
       }
 
       function renderKeyTerms(termsByTopic, topics) {
-        byId("terms-grid").innerHTML = topics.map((topic) => {
+        byId("terms-grid").innerHTML = topics.map((topic, i) => {
           const topicTerms = termsByTopic[topic.id] || [];
+          const tid = "terms-" + i;
           const termCards = topicTerms.map((item) => {
             const links = item.links.map((link) => "<li><a href='" + link.url + "' target='_blank' rel='noreferrer'>" + link.label + "</a></li>").join("");
             return "<article class='card'>" +
@@ -518,11 +524,11 @@
               "<strong>Learn More</strong><ul class='term-links'>" + links + "</ul>" +
             "</article>";
           }).join("");
-          return "<section style='border:none;padding:0 0 1rem;'>" +
-            "<h3>" + topic.title + "</h3>" +
-            "<p class='muted'>Key terms for this topic: " + topicTerms.length + "</p>" +
-            "<div class='grid'>" + termCards + "</div>" +
-            "</section>";
+          const shortLabel = topic.id === "t1" ? "Topic 1: UBI & Public Health" : "Topic 2: Military Expenditure & Health";
+          return "<div style='margin-bottom:1rem;'>" +
+            "<button class='collapse-trigger' data-target='" + tid + "' aria-expanded='false'>" + shortLabel + " (" + topicTerms.length + " terms)</button>" +
+            "<div class='collapse-content' id='" + tid + "'><div class='grid' style='margin-top:0.75rem;'>" + termCards + "</div></div>" +
+            "</div>";
         }).join("");
       }
 
@@ -538,16 +544,23 @@
         renderList(byId("delegate-help-list"), data.delegateHelp);
 
         byId("conference-slogan").textContent = "Theme: " + data.conferenceInfo.slogan;
-        renderList(byId("conference-meta-list"), [data.conferenceInfo.format, data.conferenceInfo.committeeCount, data.conferenceInfo.delegateCapacity]);
+        renderList(byId("conference-meta-list"), [data.conferenceInfo.format, data.conferenceInfo.committeeCount, data.conferenceInfo.delegateCapacity, "9 hours committee debate across 2 days"]);
         renderList(byId("conference-fees-list"), data.conferenceInfo.fees);
-        renderList(byId("conference-sessions-list"), data.conferenceInfo.sessionPlan);
         if (data.conferenceInfo.donationNote) byId("conference-donation").textContent = data.conferenceInfo.donationNote;
 
         renderTopics(data.topics);
-        byId("allocation-notes").textContent = data.allocationExamples.notes;
         renderList(byId("allocation-matrix-list"), data.allocationExamples.matrixSummary);
         renderList(byId("allocation-countries-list"), data.allocationExamples.countries || []);
         renderKeyTerms(data.keyTermsByTopic, data.topics);
+
+        document.querySelectorAll(".collapse-trigger").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const open = btn.getAttribute("aria-expanded") === "true";
+            btn.setAttribute("aria-expanded", !open);
+            const target = byId(btn.getAttribute("data-target") || btn.id.replace("-toggle", "-content"));
+            if (target) target.classList.toggle("open", !open);
+          });
+        });
 
         byId("chairs-overview").textContent = data.chairApplications.overview;
         renderList(byId("chairs-eligibility"), data.chairApplications.eligibility);
