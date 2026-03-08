@@ -164,17 +164,16 @@
       }
       .btn:hover { filter: brightness(1.1); box-shadow: 0 6px 20px rgba(212, 168, 83, 0.4); }
       .footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: 0.9rem; }
-      .collapse-trigger {
+      details { margin-top: 0.5rem; }
+      summary {
         display: flex; align-items: center; justify-content: space-between;
-        width: 100%; background: none; border: none; color: var(--gold-light);
-        font: inherit; font-size: 0.95rem; cursor: pointer; padding: 0.6rem 0;
-        text-align: left;
+        cursor: pointer; color: var(--gold-light); font-size: 0.95rem;
+        padding: 0.6rem 0; list-style: none; user-select: none;
       }
-      .collapse-trigger:hover { color: var(--gold); }
-      .collapse-trigger::after { content: "+"; font-size: 1.2rem; opacity: 0.8; }
-      .collapse-trigger[aria-expanded="true"]::after { content: "−"; }
-      .collapse-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-      .collapse-content.open { max-height: 2000px; }
+      summary::-webkit-details-marker { display: none; }
+      summary::after { content: "+"; font-size: 1.2rem; opacity: 0.8; }
+      details[open] summary::after { content: "−"; }
+      summary:hover { color: var(--gold); }
       .section-intro { max-width: 52ch; margin-bottom: 1.5rem; }
       .compact-list { columns: 2; column-gap: 2rem; }
       .compact-list li { break-inside: avoid; }
@@ -251,14 +250,14 @@
                 <li>ECOSOC dais: 2 chairs (Head Chair + Deputy Chair)</li>
                 <li>ECOSOC total room size: 24 participants</li>
               </ul>
-              <button class="collapse-trigger" data-target="countries-content" aria-expanded="false">View 22 country allocations</button>
-              <div class="collapse-content" id="countries-content">
+              <details>
+                <summary>View 22 country allocations</summary>
                 <ul class="compact-list" style="margin-top:0.5rem;">
                   <li>Bangladesh</li><li>Brazil</li><li>China</li><li>Costa Rica</li><li>Cuba</li><li>Ethiopia</li><li>Finland</li><li>Germany</li>
                   <li>India</li><li>Indonesia</li><li>Israel</li><li>Japan</li><li>Norway</li><li>Russia</li><li>Saudi Arabia</li><li>Singapore</li>
                   <li>South Africa</li><li>South Korea</li><li>Switzerland</li><li>Thailand</li><li>United States</li><li>Vietnam</li>
                 </ul>
-              </div>
+              </details>
             </article>
             <article class="card">
               <h3>Delegate Checklist</h3>
@@ -281,8 +280,8 @@
             <article class="card">
               <h3>The Question of Implementing Globally Coordinated Universal Basic Income (UBI) as a Public Health Strategy</h3>
               <p class="muted">Debate whether a globally coordinated UBI framework can reduce extreme poverty and support public health while preserving fiscal sustainability, labor incentives, and macroeconomic stability across diverse national contexts.</p>
-              <button class="collapse-trigger" data-target="topic-q-0" aria-expanded="false">Guiding questions &amp; prep ideas</button>
-              <div class="collapse-content" id="topic-q-0">
+              <details>
+                <summary>Guiding questions &amp; prep ideas</summary>
                 <strong>Guiding Questions</strong>
                 <ul>
                   <li>Should ECOSOC recommend universal design principles for UBI or region-specific implementation models?</li>
@@ -295,13 +294,13 @@
                   <li>Prepare evidence on fiscal trade-offs, inflation concerns, and social protection outcomes.</li>
                   <li>Draft implementation clauses with timelines, safeguards, and monitoring indicators.</li>
                 </ul>
-              </div>
+              </details>
             </article>
             <article class="card">
               <h3>The Question of Establishing Frameworks for Reallocating Global Military Expenditure to Public Health Infrastructure</h3>
               <p class="muted">Examine policy frameworks for redirecting a portion of military expenditure toward resilient and equitable public health infrastructure, especially in low- and middle-income settings.</p>
-              <button class="collapse-trigger" data-target="topic-q-1" aria-expanded="false">Guiding questions &amp; prep ideas</button>
-              <div class="collapse-content" id="topic-q-1">
+              <details>
+                <summary>Guiding questions &amp; prep ideas</summary>
                 <strong>Guiding Questions</strong>
                 <ul>
                   <li>What international accountability mechanisms could govern reallocation commitments?</li>
@@ -314,7 +313,7 @@
                   <li>Map feasible national pathways for partial budget reallocation or dual-use investments.</li>
                   <li>Write clauses that include funding transparency, implementation oversight, and reporting benchmarks.</li>
                 </ul>
-              </div>
+              </details>
             </article>
           </div>
         </div>
@@ -325,14 +324,14 @@
           <h2>Key Terms</h2>
           <p class="muted section-intro">Glossary for each topic with links to further reading. Expand to browse.</p>
           <div id="terms-grid">
-            <div style="margin-bottom:1rem;">
-              <button class="collapse-trigger" data-target="terms-0" aria-expanded="false">Topic 1: UBI &amp; Public Health (20 terms)</button>
-              <div class="collapse-content" id="terms-0"><div class="grid" style="margin-top:0.75rem;" id="terms-t1-grid"></div></div>
-            </div>
-            <div style="margin-bottom:1rem;">
-              <button class="collapse-trigger" data-target="terms-1" aria-expanded="false">Topic 2: Military Expenditure &amp; Health (20 terms)</button>
-              <div class="collapse-content" id="terms-1"><div class="grid" style="margin-top:0.75rem;" id="terms-t2-grid"></div></div>
-            </div>
+            <details style="margin-bottom:1rem;">
+              <summary>Topic 1: UBI &amp; Public Health (20 terms)</summary>
+              <div class="grid" style="margin-top:0.75rem;" id="terms-t1-grid"></div>
+            </details>
+            <details style="margin-bottom:1rem;">
+              <summary>Topic 2: Military Expenditure &amp; Health (20 terms)</summary>
+              <div class="grid" style="margin-top:0.75rem;" id="terms-t2-grid"></div>
+            </details>
           </div>
         </div>
       </section>
@@ -545,14 +544,6 @@
 
       function init() {
         renderKeyTermsToGrids();
-        document.querySelectorAll(".collapse-trigger").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const open = btn.getAttribute("aria-expanded") === "true";
-            btn.setAttribute("aria-expanded", !open);
-            const target = byId(btn.getAttribute("data-target"));
-            if (target) target.classList.toggle("open", !open);
-          });
-        });
         const searchInput = byId("resource-search");
         const filterSelect = byId("resource-filter");
         const grid = byId("resources-grid");
