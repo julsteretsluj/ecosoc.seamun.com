@@ -539,8 +539,6 @@
         byId("conference-location").textContent = data.conference.location;
         byId("conference-dates").textContent = data.conference.dates;
 
-        byId("about-mission").textContent = data.about.mission;
-        byId("about-focus").textContent = data.about.focus;
         renderList(byId("delegate-help-list"), data.delegateHelp);
 
         byId("conference-slogan").textContent = "Theme: " + data.conferenceInfo.slogan;
