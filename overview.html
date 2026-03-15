@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview | SEAMUN ECOSOC</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img class="brand-seamun" src="SEAMUN-logo.png" alt="SEAMUN" />
+          <img class="brand-logo" src="ECOSOC.png" alt="ECOSOC logo" />
+          SEAMUN <span>ECOSOC</span>
+        </a>
+        <nav aria-label="Main">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="terms.html">Key Terms</a></li>
+            <li><a href="chairs.html">Chairs</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top:2rem;padding-bottom:3rem;">
+      <p class="section-label">Overview</p>
+      <h1 style="font-size:1.75rem;margin-bottom:0.5rem;">Conference &amp; committee at a glance</h1>
+      <p class="muted section-intro">ECOSOC coordinates the UN's economic, social, and development work. At SEAMUN I 2027, delegates will balance policy ambition with implementation feasibility.</p>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+        <article class="card">
+          <h3>Conference</h3>
+          <p class="muted">Theme: Policies with a Purpose · <a href="https://seamun.com" target="_blank" rel="noreferrer">seamun.com</a></p>
+          <ul style="margin-top:0.5rem;">
+            <li>2-day conference · January 23–24, 2027</li>
+            <li>10 committees total · 22 chairs</li>
+            <li>200 delegates · capacity 250</li>
+            <li>9 hours committee debate across 2 days</li>
+          </ul>
+          <ul style="margin-top:0.5rem;">
+            <li>School delegation: 2,500 THB per delegate</li>
+            <li>Independent delegate: 3,000 THB</li>
+            <li>Chair staff package: 800 THB</li>
+          </ul>
+          <p class="muted" style="margin-top:0.75rem;font-size:0.9rem;">100% of conference surplus is donated to the Thai Red Cross Society (TRCS).</p>
+        </article>
+        <article class="card">
+          <h3>ECOSOC Snapshot</h3>
+          <ul>
+            <li>ECOSOC allocation: 22 delegates</li>
+            <li>ECOSOC dais: 2 chairs (Head Chair + Deputy Chair)</li>
+            <li>ECOSOC total room size: 24 participants</li>
+          </ul>
+          <details>
+            <summary>View all 22 country allocations</summary>
+            <ul class="compact-list" style="margin-top:0.5rem;" id="all-countries-list"></ul>
+          </details>
+        </article>
+        <article class="card" id="available-allocations-card">
+          <h3>Available allocations</h3>
+          <p class="muted" id="available-allocations-intro" style="margin:0 0 0.5rem 0;font-size:0.9rem;"></p>
+          <ul class="compact-list" id="available-allocations-list" style="margin-top:0.5rem;"></ul>
+          <details style="margin-top:0.75rem;">
+            <summary>Assigned</summary>
+            <ul class="compact-list muted" id="assigned-allocations-list" style="margin-top:0.5rem;"></ul>
+          </details>
+        </article>
+        <article class="card">
+          <h3>Delegate Checklist</h3>
+          <ul>
+            <li>Bring a one-page policy brief with 3 concrete deliverables your delegation supports.</li>
+            <li>Prepare at least 6 moderated caucus speaking points and 2 unmoderated goals.</li>
+            <li>Use data in every speech: baseline, target, and implementation mechanism.</li>
+            <li>Coordinate blocs early but keep room for cross-regional compromise.</li>
+          </ul>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        ECOSOC portal maintained by SEAMUN Secretariat. Secretary General: Jules K.A. &middot; <a href="https://seamun.com" target="_blank" rel="noreferrer">seamun.com</a> &middot; <a href="index.html">Home</a>
+      </div>
+    </footer>
+
+    <script>
+      var ECOSOC_COUNTRIES = ["Bangladesh", "Brazil", "China", "Costa Rica", "Cuba", "Ethiopia", "Finland", "Germany", "India", "Indonesia", "Israel", "Japan", "Norway", "Russia", "Saudi Arabia", "Singapore", "South Africa", "South Korea", "Switzerland", "Thailand", "United States", "Vietnam"];
+      var assignedCountries = [];
+      var byId = function(id) { return document.getElementById(id); };
+      var assignedSet = new Set(assignedCountries.map(function(c) { return c.trim().toLowerCase(); }).filter(Boolean));
+      var available = ECOSOC_COUNTRIES.filter(function(c) { return !assignedSet.has(c.toLowerCase()); });
+      var assigned = ECOSOC_COUNTRIES.filter(function(c) { return assignedSet.has(c.toLowerCase()); });
+      if (byId("all-countries-list")) byId("all-countries-list").innerHTML = ECOSOC_COUNTRIES.map(function(c) { return "<li>" + c + "</li>"; }).join("");
+      if (byId("available-allocations-intro")) byId("available-allocations-intro").textContent = available.length + " of " + ECOSOC_COUNTRIES.length + " allocations available. Updated when delegates are assigned.";
+      if (byId("available-allocations-list")) byId("available-allocations-list").innerHTML = available.length ? available.map(function(c) { return "<li>" + c + "</li>"; }).join("") : "<li class=\"muted\">None — all allocated.</li>";
+      if (byId("assigned-allocations-list")) byId("assigned-allocations-list").innerHTML = assigned.length ? assigned.map(function(c) { return "<li>" + c + "</li>"; }).join("") : "<li class=\"muted\">None yet.</li>";
+    </script>
+  </body>
+</html>

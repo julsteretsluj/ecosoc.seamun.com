@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources | SEAMUN ECOSOC</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img class="brand-seamun" src="SEAMUN-logo.png" alt="SEAMUN" />
+          <img class="brand-logo" src="ECOSOC.png" alt="ECOSOC logo" />
+          SEAMUN <span>ECOSOC</span>
+        </a>
+        <nav aria-label="Main">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="terms.html">Key Terms</a></li>
+            <li><a href="chairs.html">Chairs</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top:2rem;padding-bottom:3rem;">
+      <p class="section-label">Research</p>
+      <h1 style="font-size:1.75rem;margin-bottom:0.5rem;">Resources</h1>
+      <p class="muted">Filter references by type and search by keyword.</p>
+      <div class="resource-controls">
+        <input id="resource-search" type="search" placeholder="Search resources..." />
+        <select id="resource-filter">
+          <option value="all">All Types</option>
+          <option value="UN">UN</option>
+          <option value="Data">Data</option>
+          <option value="Policy">Policy</option>
+        </select>
+      </div>
+      <div id="resources-grid" class="grid">
+        <article class="card" data-type="UN">
+          <h3>UN ECOSOC Official Portal</h3>
+          <p class="muted">Mandates, sessions, subsidiary bodies, and official documentation.</p>
+          <a class="btn" href="https://www.un.org/ecosoc/" target="_blank" rel="noreferrer">Open Resource</a>
+        </article>
+        <article class="card" data-type="UN">
+          <h3>UN SDG Knowledge Platform</h3>
+          <p class="muted">Data, reports, and implementation updates across SDG pillars.</p>
+          <a class="btn" href="https://sdgs.un.org/" target="_blank" rel="noreferrer">Open Resource</a>
+        </article>
+        <article class="card" data-type="Data">
+          <h3>World Bank Open Data</h3>
+          <p class="muted">Country-level development indicators for evidence-based speeches.</p>
+          <a class="btn" href="https://data.worldbank.org/" target="_blank" rel="noreferrer">Open Resource</a>
+        </article>
+        <article class="card" data-type="Data">
+          <h3>UN Data</h3>
+          <p class="muted">Cross-system UN statistics to support policy benchmarking.</p>
+          <a class="btn" href="https://data.un.org/" target="_blank" rel="noreferrer">Open Resource</a>
+        </article>
+        <article class="card" data-type="Policy">
+          <h3>OECD Development Co-operation Directorate</h3>
+          <p class="muted">Insights on aid effectiveness and financing policy design.</p>
+          <a class="btn" href="https://www.oecd.org/dac/" target="_blank" rel="noreferrer">Open Resource</a>
+        </article>
+        <article class="card" data-type="Policy">
+          <h3>IMF Policy Papers</h3>
+          <p class="muted">Macro-fiscal frameworks, debt analyses, and resilience financing.</p>
+          <a class="btn" href="https://www.imf.org/en/Publications/Policy-Papers" target="_blank" rel="noreferrer">Open Resource</a>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        ECOSOC portal maintained by SEAMUN Secretariat. Secretary General: Jules K.A. &middot; <a href="https://seamun.com" target="_blank" rel="noreferrer">seamun.com</a> &middot; <a href="index.html">Home</a>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        var searchInput = document.getElementById("resource-search");
+        var filterSelect = document.getElementById("resource-filter");
+        var grid = document.getElementById("resources-grid");
+        if (!searchInput || !filterSelect || !grid) return;
+        var cards = grid.querySelectorAll(".card");
+        function applyFilters() {
+          var keyword = searchInput.value.trim().toLowerCase();
+          var type = filterSelect.value;
+          cards.forEach(function(card) {
+            var cardType = card.getAttribute("data-type") || "";
+            var text = (card.textContent || "").toLowerCase();
+            var match = (type === "all" || cardType === type) && (!keyword || text.indexOf(keyword) !== -1);
+            card.style.display = match ? "" : "none";
+          });
+        }
+        searchInput.addEventListener("input", applyFilters);
+        filterSelect.addEventListener("change", applyFilters);
+      })();
+    </script>
+  </body>
+</html>

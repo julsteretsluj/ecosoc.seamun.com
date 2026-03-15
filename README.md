@@ -15,9 +15,15 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open **http://localhost:3001** or **http://127.0.0.1:3001** in your browser.
+
+**If the internal browser or port doesn’t work:**
+- Open the same URL in your **system browser** (Chrome, Safari, Firefox).
+- Or run the static HTML site: `npm run dev:static` then open **http://127.0.0.1:3080/** (payment gate + overview, topics, etc.).
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+**Secretariat photos:** Place PNGs in `public/secretariat/` (e.g. `jules.png`, `emily.png`). Use images that already have transparent backgrounds; do not run any image-processing script on them.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

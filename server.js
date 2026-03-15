@@ -286,6 +286,8 @@ function pageTemplate() {
             <h2>SEAMUN I 2027 Conference Details</h2>
             <p class="muted" id="conference-slogan"></p>
             <ul id="conference-meta-list"></ul>
+            <p class="muted" id="conference-purpose" style="margin-top:0.75rem;"></p>
+            <p style="margin-top:0.5rem;font-size:0.9rem;"><a href="https://seamun.com" target="_blank" rel="noreferrer">Conference info from seamun.com →</a></p>
           </div>
           <div class="card">
             <h2>Fees and Session Structure</h2>
@@ -456,6 +458,8 @@ function pageTemplate() {
           data.conferenceInfo.committeeCount,
           data.conferenceInfo.delegateCapacity
         ]);
+        var purposeEl = byId('conference-purpose');
+        if (purposeEl && data.conferenceInfo.purpose) purposeEl.textContent = data.conferenceInfo.purpose;
         renderList(byId('conference-fees-list'), data.conferenceInfo.fees);
         renderList(byId('conference-sessions-list'), data.conferenceInfo.sessionPlan);
 

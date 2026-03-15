@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Terms | SEAMUN ECOSOC</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img class="brand-seamun" src="SEAMUN-logo.png" alt="SEAMUN" />
+          <img class="brand-logo" src="ECOSOC.png" alt="ECOSOC logo" />
+          SEAMUN <span>ECOSOC</span>
+        </a>
+        <nav aria-label="Main">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="terms.html">Key Terms</a></li>
+            <li><a href="chairs.html">Chairs</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top:2rem;padding-bottom:3rem;">
+      <p class="section-label">Glossary</p>
+      <h1 style="font-size:1.75rem;margin-bottom:0.5rem;">Key terms</h1>
+      <p class="muted section-intro">Glossary for each topic with links to further reading. Expand to browse.</p>
+      <div id="terms-grid"></div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        ECOSOC portal maintained by SEAMUN Secretariat. Secretary General: Jules K.A. &middot; <a href="https://seamun.com" target="_blank" rel="noreferrer">seamun.com</a> &middot; <a href="index.html">Home</a>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        var terms = {
+          t1: [
+            { term: "Universal Basic Income (UBI)", meaning: "Regular unconditional cash transfer paid to all eligible residents.", links: [{ label: "World Bank - UBI explainer", url: "https://www.worldbank.org/en/topic/socialprotection/brief/ubiquitous-basic-income" }] },
+            { term: "Poverty Line", meaning: "Income threshold used to determine whether individuals live in poverty.", links: [{ label: "World Bank - Poverty", url: "https://www.worldbank.org/en/topic/poverty" }] },
+            { term: "Social Protection Floor", meaning: "Minimum set of social security guarantees for basic income and services.", links: [{ label: "ILO - Social protection floors", url: "https://www.ilo.org/global/topics/social-security/WCMS_503646/lang--en/index.htm" }] },
+            { term: "Targeted Cash Transfer", meaning: "Income support directed to specific populations based on eligibility criteria.", links: [{ label: "UNICEF - Cash transfers", url: "https://www.unicef.org/social-policy/cash-transfers" }] },
+            { term: "Means Testing", meaning: "Assessing income/assets to determine eligibility for a social benefit.", links: [{ label: "OECD - Social spending", url: "https://www.oecd.org/social/expenditure.htm" }] },
+            { term: "Fiscal Sustainability", meaning: "Ability of public finances to remain stable without unsustainable debt growth.", links: [{ label: "IMF - Fiscal policy", url: "https://www.imf.org/en/Topics/fiscal-policies" }] },
+            { term: "Budget Deficit", meaning: "When government spending exceeds government revenue in a fiscal year.", links: [{ label: "IMF Data", url: "https://www.imf.org/en/Data" }] },
+            { term: "Public Debt-to-GDP Ratio", meaning: "Indicator comparing a country's debt stock to annual economic output.", links: [{ label: "World Bank Data", url: "https://data.worldbank.org/" }] },
+            { term: "Progressive Taxation", meaning: "Tax system where higher-income groups pay higher effective tax rates.", links: [{ label: "OECD - Tax policy", url: "https://www.oecd.org/tax/" }] },
+            { term: "Inflationary Pressure", meaning: "Upward price pressure that can reduce the real value of cash benefits.", links: [{ label: "IMF - Inflation", url: "https://www.imf.org/en/Topics/inflation" }] },
+            { term: "Labor Market Participation", meaning: "Share of population actively working or seeking employment.", links: [{ label: "ILOSTAT", url: "https://ilostat.ilo.org/" }] },
+            { term: "Informal Economy", meaning: "Economic activity not fully regulated, taxed, or protected by formal systems.", links: [{ label: "ILO - Informal economy", url: "https://www.ilo.org/global/topics/employment-promotion/informal-economy/lang--en/index.htm" }] },
+            { term: "Administrative Capacity", meaning: "Institutional ability to deliver programs effectively and at scale.", links: [{ label: "UNDP - Governance", url: "https://www.undp.org/governance" }] },
+            { term: "Digital Public Infrastructure (DPI)", meaning: "Digital ID, payments, and data-exchange systems enabling public service delivery.", links: [{ label: "UNDP - Digital public infrastructure", url: "https://www.undp.org/digital/transformations/digital-public-infrastructure" }] },
+            { term: "Financial Inclusion", meaning: "Access to affordable, useful financial services for individuals and firms.", links: [{ label: "World Bank - Financial inclusion", url: "https://www.worldbank.org/en/topic/financialinclusion" }] },
+            { term: "Household Consumption Smoothing", meaning: "Maintaining stable household spending during income shocks or crises.", links: [{ label: "World Bank - Social protection", url: "https://www.worldbank.org/en/topic/socialprotection" }] },
+            { term: "Conditionality", meaning: "Policy rule requiring beneficiaries to meet specific conditions for support.", links: [{ label: "UNICEF - Social policy", url: "https://www.unicef.org/social-policy" }] },
+            { term: "Policy Pilot", meaning: "Limited trial implementation used to test outcomes before national rollout.", links: [{ label: "OECD - Policy experimentation", url: "https://www.oecd.org/gov/innovative-government/" }] },
+            { term: "Monitoring and Evaluation (M&E)", meaning: "Processes to track implementation quality and measure program outcomes.", links: [{ label: "UNDP - Results based management", url: "https://www.undp.org/publications/handbook-planning-monitoring-and-evaluating-development-results" }] },
+            { term: "Macroeconomic Stability", meaning: "Stable growth, inflation, and employment conditions across the economy.", links: [{ label: "IMF - Macroeconomic policy", url: "https://www.imf.org/en/Topics" }] }
+          ],
+          t2: [
+            { term: "Military Expenditure", meaning: "Government spending on armed forces, defense operations, and military systems.", links: [{ label: "SIPRI - Military expenditure", url: "https://www.sipri.org/databases/milex" }] },
+            { term: "Budget Reallocation", meaning: "Shifting resources from one spending area to another through fiscal policy.", links: [{ label: "IMF - Public financial management", url: "https://www.imf.org/en/Topics/Public-Financial-Management" }] },
+            { term: "Opportunity Cost", meaning: "Value of alternatives forgone when resources are used for a different purpose.", links: [{ label: "OECD - Economics glossary", url: "https://www.oecd.org/" }] },
+            { term: "Public Health Systems", meaning: "Institutions and services that prevent disease and provide population health care.", links: [{ label: "WHO - Health systems", url: "https://www.who.int/health-topics/health-systems-strengthening" }] },
+            { term: "Primary Health Care (PHC)", meaning: "First-contact, community-based care forming the foundation of health systems.", links: [{ label: "WHO - Primary health care", url: "https://www.who.int/health-topics/primary-health-care" }] },
+            { term: "Universal Health Coverage (UHC)", meaning: "Access to needed health services without financial hardship.", links: [{ label: "WHO - UHC", url: "https://www.who.int/health-topics/universal-health-coverage" }] },
+            { term: "Health Workforce Capacity", meaning: "Availability and competency of doctors, nurses, and allied professionals.", links: [{ label: "WHO - Health workforce", url: "https://www.who.int/health-topics/health-workforce" }] },
+            { term: "Pandemic Preparedness", meaning: "Planning and systems required to detect and respond to disease outbreaks.", links: [{ label: "WHO - Preparedness", url: "https://www.who.int/emergencies/preparedness" }] },
+            { term: "Surveillance Systems", meaning: "Data systems used to monitor disease patterns and public health threats.", links: [{ label: "WHO - Surveillance", url: "https://www.who.int/health-topics/disease-outbreaks#tab=tab_1" }] },
+            { term: "Essential Medicines Access", meaning: "Reliable availability of safe, effective, affordable priority medicines.", links: [{ label: "WHO - Essential medicines", url: "https://www.who.int/teams/health-product-policy-and-standards/essential-medicines-and-health-products" }] },
+            { term: "Health Equity", meaning: "Fair access to health services and outcomes across different populations.", links: [{ label: "WHO - Equity", url: "https://www.who.int/health-topics/health-equity" }] },
+            { term: "Disarmament for Development", meaning: "Concept linking reduced armament burdens to socio-economic development gains.", links: [{ label: "UNODA - Disarmament and development", url: "https://disarmament.unoda.org/" }] },
+            { term: "Dual-Use Spending", meaning: "Expenditures that can serve both security and civilian resilience outcomes.", links: [{ label: "UN - Peace and development", url: "https://www.un.org/en/" }] },
+            { term: "Budget Transparency", meaning: "Public access to government spending plans, data, and reporting.", links: [{ label: "Open Budget Survey", url: "https://internationalbudget.org/open-budget-survey/" }] },
+            { term: "Accountability Framework", meaning: "Set of rules and review processes that track commitments and performance.", links: [{ label: "UN SDG follow-up", url: "https://sdgs.un.org/" }] },
+            { term: "Sovereignty Concern", meaning: "State sensitivity about external influence over domestic spending decisions.", links: [{ label: "UN Charter", url: "https://www.un.org/en/about-us/un-charter" }] },
+            { term: "Development Assistance", meaning: "International aid and cooperation to support long-term socio-economic progress.", links: [{ label: "OECD - Development co-operation", url: "https://www.oecd.org/dac/" }] },
+            { term: "Health Financing", meaning: "How countries raise, pool, and spend funds for health services.", links: [{ label: "WHO - Health financing", url: "https://www.who.int/health-topics/health-financing" }] },
+            { term: "Resilient Infrastructure", meaning: "Facilities and systems designed to withstand shocks and disruptions.", links: [{ label: "UNDRR - Resilience", url: "https://www.undrr.org/" }] },
+            { term: "Outcome Indicators", meaning: "Measurable results used to assess policy impact over time.", links: [{ label: "World Bank indicators", url: "https://data.worldbank.org/indicator" }] }
+          ]
+        };
+        var grid = document.getElementById("terms-grid");
+        if (!grid) return;
+        function card(t) {
+          var links = (t.links || []).map(function(l) { return "<li><a href=\"" + l.url + "\" target=\"_blank\" rel=\"noreferrer\">" + l.label + "</a></li>"; }).join("");
+          return "<article class=\"card\"><h3>" + t.term + "</h3><p class=\"muted\">" + t.meaning + "</p><strong>Learn More</strong><ul class=\"term-links\">" + links + "</ul></article>";
+        }
+        grid.innerHTML =
+          "<details style=\"margin-bottom:1rem;\"><summary>Topic 1: UBI &amp; Public Health (" + terms.t1.length + " terms)</summary><div class=\"grid\" style=\"margin-top:0.75rem;\">" + terms.t1.map(card).join("") + "</div></details>" +
+          "<details style=\"margin-bottom:1rem;\"><summary>Topic 2: Military Expenditure &amp; Health (" + terms.t2.length + " terms)</summary><div class=\"grid\" style=\"margin-top:0.75rem;\">" + terms.t2.map(card).join("") + "</div></details>";
+      })();
+    </script>
+  </body>
+</html>

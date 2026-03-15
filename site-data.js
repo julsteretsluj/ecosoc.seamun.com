@@ -1,23 +1,66 @@
+/**
+ * Canonical SEAMUN conference info inherited from seamun.com.
+ * Keep in sync with https://seamun.com for fees, capacity, dates, and contact.
+ */
+const seamun = {
+  name: "SEAMUN I 2027",
+  tagline: "Policies with a Purpose",
+  dates: "January 23–24, 2027",
+  location: "Bangkok",
+  venueNote: "Venue TBD (Bangkok)",
+  audience: "Mid- and high school (grades 7–12)",
+  capacity: 250,
+  delegateCount: "200 delegates",
+  chairCount: "22 chairs",
+  committeeCount: "10 committees",
+  description:
+    "A student-led, non-profit Model UN conference focused on global healthcare and sustainability. Join 200 delegates, 22 chairs, and 10 committees for two days of policy-driven debate.",
+  purpose:
+    "100% of conference surplus is donated to the Thai Red Cross Society. We connect global policy debate with local impact.",
+  highlights: [
+    "Digital note passing — Send and receive notes to fellow delegates online.",
+    "Personalized dashboard — Track your committee, allocations, and schedule in one place.",
+    "100% donation — All surplus goes to the Thai Red Cross Society.",
+    "Student-led, non-profit, focused on global healthcare and sustainability."
+  ],
+  fees: [
+    "School delegation: 2,500 THB per delegate",
+    "Independent delegate: 3,000 THB",
+    "Chair staff package: 800 THB"
+  ],
+  contact: {
+    general: "information@seamun.com",
+    secretaryGeneral: "juleskittoastrop@gmail.com"
+  },
+  links: {
+    homepage: "https://seamun.com",
+    committees: "https://seamun.com/committees",
+    showInterest: "https://forms.gle/iy57uXzA89d3WVYy8",
+    calendar: "https://seamun.com/assets/SEAMUN-I-2027.ics"
+  }
+};
+
 const ecosocContent = {
+  seamun,
   conference: {
-    name: "SEAMUN I 2027",
+    name: seamun.name,
     committee: "Economic and Social Council (ECOSOC)",
     subtitle:
       "Committee portal for topic preparation, chair applications, and conference readiness.",
-    location: "Bangkok",
-    dates: "January 23-24, 2027"
+    location: seamun.location,
+    dates: seamun.dates,
+    venueNote: seamun.venueNote
   },
   conferenceInfo: {
-    slogan: "Policies with a Purpose",
+    slogan: seamun.tagline,
     format: "2-day conference",
-    delegateCapacity: "200 delegates",
-    committeeCount: "10 committees total",
-    fees: [
-      "Delegate fee (2-day): 1,800 THB",
-      "Delegate fee (1-day): 1,200 THB",
-      "Chair staff package fee: 800 THB",
-      "One-day chair fee listed in planning notes: 500 THB"
-    ],
+    delegateCapacity: seamun.delegateCount,
+    committeeCount: seamun.committeeCount + " total",
+    capacity: seamun.capacity,
+    audience: seamun.audience,
+    purpose: seamun.purpose,
+    highlights: seamun.highlights,
+    fees: seamun.fees,
     sessionPlan: [
       "Day 1: three committee sessions, total 4.5 hours",
       "Day 2: three committee sessions, total 4.5 hours",
@@ -318,7 +361,7 @@ const ecosocContent = {
       "Decisions Released: TBA",
       "Conference Dates: January 23-24, 2027"
     ],
-    applyLink: "mailto:secretariat@seamun.example?subject=ECOSOC%20Chair%20Application"
+    applyLink: "mailto:juleskittoastrop@gmail.com?subject=ECOSOC%20Chair%20Application%20-%20SEAMUN%20I%202027"
   },
   resources: [
     {
