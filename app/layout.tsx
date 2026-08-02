@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import CommitteeWheel from "@/components/committee-wheel/CommitteeWheel";
 import PaymentGate from "@/components/payment-gate/PaymentGate";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
+import "./site.css";
 
 export const metadata: Metadata = {
-  title: "ECOSOC 2027 — United Nations Economic and Social Council",
+  title: "ECOSOC — SEAMUN I 2027",
   description:
-    "Global policy. Real diplomacy. ECOSOC 2027 — the principal platform for international economic and social cooperation.",
+    "Economic and Social Council at SEAMUN I 2027. Beginner traditional committee — UBI and military-to-health topics, allocations, schedule, ROP, position papers, and chair report.",
+  icons: {
+    icon: "/ecosoc-logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <CommitteeWheel>
           <PaymentGate>{children}</PaymentGate>
         </CommitteeWheel>
