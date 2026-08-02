@@ -9,7 +9,11 @@ export const metadata: Metadata = {
   description:
     "Economic and Social Council at SEAMUN I 2027. Beginner traditional committee — UBI and military-to-health topics, allocations, schedule, ROP, position papers, and chair report.",
   icons: {
-    icon: "/ecosoc-logo.png",
+    icon: [
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/ecosoc-logo.png", type: "image/png" },
+    ],
+    apple: "/ecosoc-logo.png",
   },
 };
 
