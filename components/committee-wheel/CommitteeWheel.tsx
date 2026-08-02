@@ -150,9 +150,9 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
           key="wheel"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.35 } }}
-          className="fixed inset-0 z-[110] flex min-h-screen flex-col overflow-auto bg-[var(--un-deep-blue)] pt-6 pb-4"
+          className="fixed inset-0 z-[110] flex min-h-screen flex-col items-center overflow-auto bg-[var(--un-deep-blue)] pt-6 pb-4"
         >
-          <div className="flex flex-col items-center text-center">
+          <div className="flex w-full flex-col items-center text-center">
             <h1 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
               SEAMUN I 2027
             </h1>
@@ -160,11 +160,11 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
           </div>
 
           {/* Full circle wheel: center logo + rings + labels */}
-          <div className="relative mx-auto mt-6 flex w-full max-w-3xl flex-1 flex-col items-center justify-center px-4">
+          <div className="relative mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center px-4">
             <div
               ref={wheelRef}
-              className="relative overflow-visible touch-none select-none cursor-grab active:cursor-grabbing"
-              style={{ width: WHEEL_SIZE, height: WHEEL_SIZE, maxWidth: "100%" }}
+              className="relative mx-auto aspect-square w-full touch-none select-none cursor-grab overflow-visible active:cursor-grabbing"
+              style={{ maxWidth: WHEEL_SIZE }}
               onPointerDownCapture={onPointerDown}
               onPointerMove={onPointerMove}
               onPointerUp={onPointerUp}
@@ -173,7 +173,7 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
             >
               {/* Vinyl record: disc + grooves (SVG) */}
               <svg
-                className="absolute left-0 top-0 h-full w-full pointer-events-none"
+                className="pointer-events-none absolute inset-0 h-full w-full"
                 viewBox={`0 0 ${WHEEL_SIZE} ${WHEEL_SIZE}`}
                 fill="none"
                 preserveAspectRatio="xMidYMid meet"
@@ -224,12 +224,10 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
 
               {/* Center label (paper): selected committee logo + name — static, not rotating */}
               <div
-                className="absolute flex flex-col items-center justify-center gap-1.5 rounded-full border border-amber-200/30 bg-amber-50/95 shadow-inner ring-2 ring-black/10 pointer-events-none"
+                className="pointer-events-none absolute left-1/2 top-1/2 flex flex-col items-center justify-center gap-1.5 rounded-full border border-amber-200/30 bg-amber-50/95 shadow-inner ring-2 ring-black/10"
                 style={{
-                  left: WHEEL_CX,
-                  top: WHEEL_CY,
-                  width: CENTER_LABEL_RADIUS * 2,
-                  height: CENTER_LABEL_RADIUS * 2,
+                  width: `${(CENTER_LABEL_RADIUS * 2 / WHEEL_SIZE) * 100}%`,
+                  height: `${(CENTER_LABEL_RADIUS * 2 / WHEEL_SIZE) * 100}%`,
                   transform: "translate(-50%, -50%)",
                 }}
               >
@@ -263,11 +261,9 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
 
               {/* Rotating: curved labels surrounding the vinyl (SVG text on path) */}
               <motion.div
-                className="absolute left-0 top-0"
+                className="absolute inset-0"
                 style={{
-                  width: WHEEL_SIZE,
-                  height: WHEEL_SIZE,
-                  transformOrigin: `${WHEEL_CX}px ${WHEEL_CY}px`,
+                  transformOrigin: "50% 50%",
                 }}
                 animate={{ rotate: rotationDeg }}
                 transition={
@@ -277,7 +273,7 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
                 }
               >
                 <svg
-                  className="committee-wheel-labels absolute left-0 top-0 h-full w-full overflow-visible [&_g:focus]:outline-none [&_g:focus-visible]:outline-none"
+                  className="committee-wheel-labels absolute inset-0 h-full w-full overflow-visible [&_g:focus]:outline-none [&_g:focus-visible]:outline-none"
                   viewBox={`0 0 ${WHEEL_SIZE} ${WHEEL_SIZE}`}
                   fill="none"
                   preserveAspectRatio="xMidYMid meet"
