@@ -47,6 +47,12 @@ body {
   outline-offset: 2px;
 }
 
+/* Committee wheel labels: no hard focus box — selection uses soft glow instead */
+.committee-wheel-labels g:focus,
+.committee-wheel-labels g:focus-visible {
+  outline: none !important;
+}
+
 /* Payment gate card: force white behind transparent PNG (no black) */
 .ecosoc-gate-card-wrap,
 .ecosoc-gate-card-wrap * {

@@ -277,18 +277,54 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
                 }
               >
                 <svg
-                  className="absolute left-0 top-0 h-full w-full overflow-visible"
+                  className="committee-wheel-labels absolute left-0 top-0 h-full w-full overflow-visible [&_g:focus]:outline-none [&_g:focus-visible]:outline-none"
                   viewBox={`0 0 ${WHEEL_SIZE} ${WHEEL_SIZE}`}
                   fill="none"
                   preserveAspectRatio="xMidYMid meet"
                   aria-hidden
                 >
+                  <defs>
+                    <filter
+                      id="selectedLabelGlow"
+                      x="-80%"
+                      y="-80%"
+                      width="260%"
+                      height="260%"
+                    >
+                      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur" />
+                      <feFlood floodColor="#93c5fd" floodOpacity="0.85" result="color" />
+                      <feComposite in="color" in2="blur" operator="in" result="glow" />
+                      <feMerge>
+                        <feMergeNode in="glow" />
+                        <feMergeNode in="glow" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                    <filter
+                      id="selectedDotGlow"
+                      x="-150%"
+                      y="-150%"
+                      width="400%"
+                      height="400%"
+                    >
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
                   {SEAMUN_COMMITTEES.map((c, i) => {
                     const angle = getAngle(i);
                     const isSelected = i === displayIndex;
                     const arcD = getArcPath(angle, LABEL_ARC_SPAN);
                     const pathId = `label-path-${c.id}`;
                     const label = c.shortName ?? c.name;
+                    const toRad = (angle * Math.PI) / 180;
+                    const glowCx =
+                      WHEEL_CX + LABELS_RADIUS * Math.cos(toRad);
+                    const glowCy =
+                      WHEEL_CY - LABELS_RADIUS * Math.sin(toRad);
                     return (
                       <g
                         key={c.id}
@@ -303,18 +339,35 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
                         tabIndex={0}
                         aria-label={label}
                         aria-pressed={isSelected}
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: "pointer", outline: "none" }}
                       >
                         <path id={pathId} d={arcD} fill="none" />
+                        {isSelected && (
+                          <ellipse
+                            cx={glowCx}
+                            cy={glowCy}
+                            rx={58}
+                            ry={22}
+                            fill="rgba(147, 197, 253, 0.22)"
+                            style={{
+                              filter:
+                                "blur(10px) drop-shadow(0 0 14px rgba(147,197,253,0.55))",
+                            }}
+                            pointerEvents="none"
+                          />
+                        )}
                         <text
                           fill={isSelected ? "rgb(254 243 199)" : "rgba(255,255,255,0.6)"}
                           fontSize={14}
                           fontFamily="system-ui, sans-serif"
-                          fontWeight="500"
+                          fontWeight={isSelected ? "600" : "500"}
                           letterSpacing="0.15em"
                           style={{
                             textTransform: "uppercase",
-                            filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.8))",
+                            outline: "none",
+                            filter: isSelected
+                              ? "url(#selectedLabelGlow)"
+                              : "drop-shadow(0 1px 2px rgba(0,0,0,0.8))",
                           }}
                         >
                           <textPath
@@ -335,11 +388,17 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
                         />
                         {isSelected && (
                           <circle
-                            cx={WHEEL_CX + (LABELS_RADIUS + 14) * Math.cos((angle * Math.PI) / 180)}
-                            cy={WHEEL_CY - (LABELS_RADIUS + 14) * Math.sin((angle * Math.PI) / 180)}
+                            cx={
+                              WHEEL_CX +
+                              (LABELS_RADIUS + 14) * Math.cos(toRad)
+                            }
+                            cy={
+                              WHEEL_CY -
+                              (LABELS_RADIUS + 14) * Math.sin(toRad)
+                            }
                             r={4}
                             fill="#fbbf24"
-                            style={{ filter: "drop-shadow(0 0 2px rgba(0,0,0,0.5))" }}
+                            filter="url(#selectedDotGlow)"
                           />
                         )}
                       </g>
