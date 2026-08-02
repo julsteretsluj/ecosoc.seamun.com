@@ -62,10 +62,6 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
     setIndex((i) => (i + delta + TOTAL) % TOTAL);
   }, []);
 
-  const pickRandom = useCallback(() => {
-    setIndex(Math.floor(Math.random() * TOTAL));
-  }, []);
-
   const handleEnter = useCallback(() => {
     if (committee.isCurrent) {
       setEntered(true);
@@ -404,7 +400,7 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
               </motion.div>
             </div>
 
-            {/* Prev / Play (random) / Next */}
+            {/* Prev / Play (continue) / Next */}
             <div className="mt-2 flex w-full max-w-[600px] items-center justify-between gap-2 px-2">
               <button
                 type="button"
@@ -416,10 +412,10 @@ export default function CommitteeWheel({ children }: { children: React.ReactNode
               </button>
               <button
                 type="button"
-                onClick={pickRandom}
+                onClick={handleEnter}
                 className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50"
-                aria-label="Random committee"
-                title="Pick a random committee"
+                aria-label={isCurrent ? "Continue to ECOSOC" : "Continue to committee site"}
+                title={isCurrent ? "Continue — enter profile" : "Continue — visit site"}
               >
                 <svg
                   className="h-5 w-5 shrink-0"
