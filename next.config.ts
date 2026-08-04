@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Use port 3001 to avoid conflicts; reduces cache writes when disk is low
+  // Static export for Hostinger (upload the `out/` folder)
+  output: "export",
+  images: { unoptimized: true },
+  trailingSlash: true,
   webpack: (config, { dev }) => {
     if (dev) config.cache = false;
     return config;

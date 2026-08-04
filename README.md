@@ -1,43 +1,33 @@
 # ecosoc.seamun.com
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+SEAMUN I 2027 ECOSOC committee site (vinyl selector → payment gate → committee portal).
 
-First, run the development server:
+## Local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open **http://localhost:3001** or **http://127.0.0.1:3001** in your browser.
+Open http://localhost:3001
 
-**If the internal browser or port doesn’t work:**
-- Open the same URL in your **system browser** (Chrome, Safari, Firefox).
-- Or run the static HTML site: `npm run dev:static` then open **http://127.0.0.1:3080/** (payment gate + overview, topics, etc.).
+## Hostinger upload (static)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Hostinger only serves static files. Do **not** upload the repo root or `.next/`.
 
-**Secretariat photos:** Place PNGs in `public/secretariat/` (e.g. `jules.png`, `emily.png`). Use images that already have transparent backgrounds; do not run any image-processing script on them.
+1. Build:
+   ```bash
+   npm run build
+   ```
+2. Upload **everything inside** the `out/` folder into the subdomain document root  
+   (usually `public_html` for `ecosoc.seamun.com`).
+3. **Delete** leftover old files if present: `overview.html`, `topics.html`, `styles.css`, `faq.html`, etc.
+4. Confirm `index.html` and the `_next/` folder are both at the root of that subdomain.
+5. Hard-refresh (or wait a minute for Hostinger CDN).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+A ready zip is produced locally as `ecosoc-hostinger-upload.zip` (contents of `out/`).
 
-## Learn More
+## Correct site check
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+After upload, the homepage title should be **ECOSOC — SEAMUN I 2027** and you should see **Choose your committee** (vinyl wheel).  
+If you still see **SEAMUN | ECOSOC Committee** with Overview/Topics/FAQ links, the old Hostinger files were not replaced.
