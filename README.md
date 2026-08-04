@@ -11,20 +11,18 @@ npm run dev
 
 Open http://localhost:3001
 
-## Hostinger upload (static)
+## Hostinger (static)
 
-Hostinger only serves static files. Do **not** upload the repo root or `.next/`.
+```bash
+npm run build:hostinger
+```
 
-1. Build the Hostinger export:
-   ```bash
-   npm run build:hostinger
-   ```
-2. Upload **everything inside** the `out/` folder into the subdomain document root  
-   (usually `public_html` for `ecosoc.seamun.com`).
-3. **Delete** leftover old files if present: `overview.html`, `topics.html`, `styles.css`, `faq.html`, etc.
-4. Confirm `index.html` and the `_next/` folder are both at the root of that subdomain.
-5. Hard-refresh (or wait a minute for Hostinger CDN).
+Upload everything inside `out/` to the subdomain document root. Delete any leftover old HTML (`overview.html`, etc.).
 
 ## Vercel
 
-Use the normal Next.js build (`npm run build`). Do not set Output Directory to `out`.
+```bash
+npm run build
+```
+
+Do not set Output Directory to `out`.

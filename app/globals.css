@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Gate / wheel essentials — main site chrome lives in /public/site.css */
+/* Gate / wheel essentials — main site chrome lives in site.css */
 
 :root {
   --un-deep-blue: #0a2540;
@@ -18,14 +18,6 @@
 }
 .ecosoc-gate-card-wrap img {
   display: block;
-}
-
-.secretariat-avatar-wrap,
-.secretariat-avatar-wrap img {
-  background-color: #ffffff !important;
-}
-.secretariat-avatar-wrap {
-  isolation: isolate;
 }
 
 .committee-wheel-labels g:focus,

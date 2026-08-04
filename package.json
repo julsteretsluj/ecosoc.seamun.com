@@ -1,13 +1,10 @@
 {
   "name": "ecosoc.seamun.com",
   "version": "1.0.0",
-  "description": "Dynamic ECOSOC committee website",
+  "description": "SEAMUN I 2027 ECOSOC committee website",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001 -H 0.0.0.0",
-    "dev:static": "node scripts/serve-static.js",
-    "process-card": "node scripts/process-ecosoc-card.js",
-    "process-secretariat": "node scripts/process-secretariat-images.js",
     "build": "next build",
     "build:hostinger": "OUTPUT_EXPORT=1 next build",
     "start": "next start",
@@ -26,7 +23,6 @@
     "@types/react-dom": "^19.0.1",
     "eslint": "^9.16.0",
     "eslint-config-next": "15.1.9",
-    "sharp": "^0.33.5",
     "typescript": "^5.7.2"
   },
   "license": "MIT"
