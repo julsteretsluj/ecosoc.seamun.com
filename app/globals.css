@@ -9,15 +9,17 @@
   --dark-text: #0f172a;
 }
 
-.ecosoc-gate-card-wrap,
-.ecosoc-gate-card-wrap * {
-  background-color: #ffffff !important;
-}
-.ecosoc-gate-card-wrap {
-  isolation: isolate;
-}
-.ecosoc-gate-card-wrap img {
+.ecosoc-gate-card {
   display: block;
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 14px;
+  background: transparent;
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
 }
 
 .committee-wheel-labels g:focus,

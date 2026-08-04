@@ -121,12 +121,12 @@ export default function PaymentGate({ children }: { children: React.ReactNode })
             aria-label="ECOSOC committee card — drag onto reader"
             className="fixed z-10 cursor-grab touch-none select-none active:cursor-grabbing"
             style={{
-              width: "clamp(100px, 22vw, 140px)",
+              width: "clamp(200px, 48vw, 300px)",
               ...(pos
                 ? { left: pos.x, top: pos.y, transform: "none" }
                 : {
                     left: "50%",
-                    top: "55%",
+                    top: "58%",
                     transform: "translate(-50%, -50%)",
                   }),
             }}
@@ -138,19 +138,16 @@ export default function PaymentGate({ children }: { children: React.ReactNode })
             animate={success ? { scale: [1, 1.05, 1], opacity: 0.9 } : {}}
             transition={{ duration: 0.4 }}
           >
-            <div className="ecosoc-gate-card-wrap overflow-hidden rounded-xl">
-              <div className="aspect-[1.586/1] relative w-full">
-                <img
-                  src={CARD_IMAGE}
-                  alt=""
-                  draggable={false}
-                  className="absolute inset-0 h-full w-full object-contain p-1"
-                />
-              </div>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={CARD_IMAGE}
+              alt=""
+              draggable={false}
+              className="ecosoc-gate-card block h-auto w-full select-none"
+            />
           </motion.div>
 
-          <p className="mt-32 text-xs text-white/60 md:mt-36">
+          <p className="mt-40 text-xs text-white/60 md:mt-44">
             Drag the card onto the reader to tap to pay
           </p>
 
