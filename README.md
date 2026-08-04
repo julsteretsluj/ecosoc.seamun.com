@@ -15,9 +15,9 @@ Open http://localhost:3001
 
 Hostinger only serves static files. Do **not** upload the repo root or `.next/`.
 
-1. Build:
+1. Build the Hostinger export:
    ```bash
-   npm run build
+   npm run build:hostinger
    ```
 2. Upload **everything inside** the `out/` folder into the subdomain document root  
    (usually `public_html` for `ecosoc.seamun.com`).
@@ -25,9 +25,6 @@ Hostinger only serves static files. Do **not** upload the repo root or `.next/`.
 4. Confirm `index.html` and the `_next/` folder are both at the root of that subdomain.
 5. Hard-refresh (or wait a minute for Hostinger CDN).
 
-A ready zip is produced locally as `ecosoc-hostinger-upload.zip` (contents of `out/`).
+## Vercel
 
-## Correct site check
-
-After upload, the homepage title should be **ECOSOC — SEAMUN I 2027** and you should see **Choose your committee** (vinyl wheel).  
-If you still see **SEAMUN | ECOSOC Committee** with Overview/Topics/FAQ links, the old Hostinger files were not replaced.
+Use the normal Next.js build (`npm run build`). Do not set Output Directory to `out`.
